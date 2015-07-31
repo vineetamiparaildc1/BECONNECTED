@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>90716402-712B-43F8-A25A-6576B4D4BC5A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BECONNECTED</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E56145A1EB6590C1BF1FD45B45EBA5322F7357D1</key>
+		<string>https://github.com/vineetamiparaildc1/BECONNECTED.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BECONNECTED/BECONNECTED.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E56145A1EB6590C1BF1FD45B45EBA5322F7357D1</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vineetamiparaildc1/BECONNECTED.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E56145A1EB6590C1BF1FD45B45EBA5322F7357D1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E56145A1EB6590C1BF1FD45B45EBA5322F7357D1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BECONNECTED</string>
+		</dict>
+	</array>
+</dict>
+</plist>

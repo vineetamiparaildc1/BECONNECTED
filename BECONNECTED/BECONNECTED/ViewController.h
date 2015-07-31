@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Google/SignIn.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<GIDSignInDelegate,GIDSignInUIDelegate>
+@property(weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
+-(IBAction)btnSignInClicked:(id)sender;
+- (IBAction)btnFBSignInClicked:(id)sender;
+- (IBAction)btnTwitterSignIn:(id)sender;
 
 
 @end
