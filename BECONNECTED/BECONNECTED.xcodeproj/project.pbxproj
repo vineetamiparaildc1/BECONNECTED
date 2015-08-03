@@ -14,6 +14,9 @@
 		A96084A71B6A4ECE00ADD133 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96084A61B6A4ECE00ADD133 /* Images.xcassets */; };
 		A96084AA1B6A4ECE00ADD133 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A96084A81B6A4ECE00ADD133 /* LaunchScreen.xib */; };
 		A96084B61B6A4ECE00ADD133 /* BECONNECTEDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A96084B51B6A4ECE00ADD133 /* BECONNECTEDTests.m */; };
+		A96A0B891B6F83EB00794031 /* belogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A96A0B871B6F83EB00794031 /* belogo.jpg */; };
+		A96A0B8A1B6F83EB00794031 /* btn_information.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A0B881B6F83EB00794031 /* btn_information.png */; };
+		A96A0B8D1B6F8A4D00794031 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A0B8C1B6F8A4D00794031 /* SignUpViewController.m */; };
 		A9E821CF1B6B8C9D004D5CD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9E821CE1B6B8C9D004D5CD6 /* GoogleService-Info.plist */; };
 		A9E821D31B6B957B004D5CD6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E821D01B6B957B004D5CD6 /* FBSDKCoreKit.framework */; };
 		A9E821D41B6B957B004D5CD6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E821D11B6B957B004D5CD6 /* FBSDKLoginKit.framework */; };
@@ -47,6 +50,10 @@
 		A96084AF1B6A4ECE00ADD133 /* BECONNECTEDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BECONNECTEDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96084B41B6A4ECE00ADD133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A96084B51B6A4ECE00ADD133 /* BECONNECTEDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BECONNECTEDTests.m; sourceTree = "<group>"; };
+		A96A0B871B6F83EB00794031 /* belogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = belogo.jpg; sourceTree = "<group>"; };
+		A96A0B881B6F83EB00794031 /* btn_information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_information.png; sourceTree = "<group>"; };
+		A96A0B8B1B6F8A4D00794031 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		A96A0B8C1B6F8A4D00794031 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		A9E821CE1B6B8C9D004D5CD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9E821D01B6B957B004D5CD6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A9E821D11B6B957B004D5CD6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -96,6 +103,8 @@
 		A960848D1B6A4ECE00ADD133 = {
 			isa = PBXGroup;
 			children = (
+				A96A0B871B6F83EB00794031 /* belogo.jpg */,
+				A96A0B881B6F83EB00794031 /* btn_information.png */,
 				A96084981B6A4ECE00ADD133 /* BECONNECTED */,
 				A96084B21B6A4ECE00ADD133 /* BECONNECTEDTests */,
 				A96084971B6A4ECE00ADD133 /* Products */,
@@ -123,6 +132,8 @@
 				A960849E1B6A4ECE00ADD133 /* AppDelegate.m */,
 				A96084A01B6A4ECE00ADD133 /* ViewController.h */,
 				A96084A11B6A4ECE00ADD133 /* ViewController.m */,
+				A96A0B8B1B6F8A4D00794031 /* SignUpViewController.h */,
+				A96A0B8C1B6F8A4D00794031 /* SignUpViewController.m */,
 				A96084A31B6A4ECE00ADD133 /* Main.storyboard */,
 				A96084A61B6A4ECE00ADD133 /* Images.xcassets */,
 				A96084A81B6A4ECE00ADD133 /* LaunchScreen.xib */,
@@ -244,7 +255,9 @@
 				A9E821CF1B6B8C9D004D5CD6 /* GoogleService-Info.plist in Resources */,
 				A96084A51B6A4ECE00ADD133 /* Main.storyboard in Resources */,
 				A96084AA1B6A4ECE00ADD133 /* LaunchScreen.xib in Resources */,
+				A96A0B891B6F83EB00794031 /* belogo.jpg in Resources */,
 				A96084A71B6A4ECE00ADD133 /* Images.xcassets in Resources */,
+				A96A0B8A1B6F83EB00794031 /* btn_information.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +324,7 @@
 			files = (
 				A96084A21B6A4ECE00ADD133 /* ViewController.m in Sources */,
 				A960849F1B6A4ECE00ADD133 /* AppDelegate.m in Sources */,
+				A96A0B8D1B6F8A4D00794031 /* SignUpViewController.m in Sources */,
 				A960849C1B6A4ECE00ADD133 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

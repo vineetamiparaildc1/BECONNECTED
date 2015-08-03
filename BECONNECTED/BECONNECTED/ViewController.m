@@ -10,6 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <TwitterKit/TwitterKit.h>
+#import "SignUpViewController.h"
 
 
 @interface ViewController ()
@@ -55,7 +56,7 @@ dismissViewController:(UIViewController *)viewController {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)btnSignInClicked:(id)sender
+- (IBAction)btnGoogleSignInClicked:(id)sender
 {
     GIDSignIn *googleSignIn = [GIDSignIn sharedInstance];
     //    googleSignIn.shouldFetchBasicProfile = YES;
@@ -80,16 +81,14 @@ didSignInForUser:(GIDGoogleUser *)user
     NSLog(@"UserID = %@",userId);
     NSLog(@"idToken = %@",idToken);
     
-    // ...
- 
-    
-    
 }
 //Facebook
 
-- (IBAction)btnFBSignInClicked:(id)sender {
+- (IBAction)btnFBSignInClicked:(id)sender
+{
     
-    if ([FBSDKAccessToken currentAccessToken]) {
+    if ([FBSDKAccessToken currentAccessToken])
+    {
         [self getFbInfo];
     }
     else{
@@ -143,9 +142,6 @@ didSignInForUser:(GIDGoogleUser *)user
 }
 
 
-
-
-
 -(void)getFbInfo{
     
     [[[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:@{@"fields":@"id,name,picture.type(large),email,birthday, bio,location"}]startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
@@ -157,6 +153,12 @@ didSignInForUser:(GIDGoogleUser *)user
     }];
 }
 
+
+-(IBAction)btn_SignUpClicked:(id)sender
+{
+    SignUpViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"SignUpViewController"];
+    [self presentViewController:obj animated:YES completion:nil];
+}
 
 
 @end
