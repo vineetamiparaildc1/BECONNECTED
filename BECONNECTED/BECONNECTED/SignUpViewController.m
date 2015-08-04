@@ -12,6 +12,7 @@
 {
     UIPickerView *singlePicker;
     NSArray *pickerArray;
+    int x;
 
 }
 
@@ -288,6 +289,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if (([_txtCountryCode.text isEqualToString:@"Code"] || _txtCountryCode.text.length == 0) && textField.tag ==2)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
+
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return pickerArray.count;
@@ -304,23 +317,166 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    self.txt_SelectCountry.inputView = singlePicker;
+    
     _pickerView.hidden=false;
+    
+    
+    if (textField.tag == 1)
+    {
+        self.txt_SelectCountry.inputView = singlePicker;
+        
+    }
+    if (textField.tag == 2)
+    {
+        _txtMobieNumber.text=@"";
+    }
+    if (textField.tag == 3)
+    {
+        _numpadViewVeriyCode.hidden=false;
+        _txtVerifyCode.text=@"";
+    }
+    
 
 }
+
+
+- (IBAction)btnCancelClicked:(id)sender
+{
+    _verficationView.hidden=TRUE;
+}
+
+- (IBAction)infoClicked:(id)sender
+{
+    _verficationView.hidden=FALSE;
+    _termsCondTxtView.hidden=FALSE;
+    _btnCancel.hidden=FALSE;
+    _mainHeaderlbl.text=@"Terms & Conditions";
+}
+
+- (IBAction)getVerifactionCodeClicked:(id)sender
+{
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Required Field" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    alert.delegate=self;
+    
+    if ([_txtCountryCode.text isEqualToString:@"Code"] || _txtCountryCode.text.length == 0)
+    {
+        alert.message=@"Please Select A Country";
+        [alert show];
+    }
+    else if ([_txtMobieNumber.text isEqualToString:@"Mobile No"] || _txtMobieNumber.text.length == 0)
+    {
+        alert.message=@"Please Enter Mobile Number";
+        [alert show];
+    }
+    else
+    {
+        x=1;
+        alert = [[UIAlertView alloc]initWithTitle:@"Required Field" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        alert.title=@"Is your Mobile Number Correct ?";
+        alert.message=[NSString stringWithFormat:@"Your mobile number is %@",_txtMobieNumber.text];
+        [alert show];
+        
+        
+    }
+
+
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    if (buttonIndex == 0 && x==1)
+    {
+        mailComposer = [[MFMailComposeViewController alloc]init];
+        mailComposer.mailComposeDelegate = self;
+        [mailComposer setSubject:@"Verification Code"];
+        [mailComposer setMessageBody:@"Your Verification Code is 1234" isHTML:NO];
+        [self presentViewController:mailComposer animated:YES completion:NULL];
+        _verficationView.hidden=FALSE;
+        _termsCondTxtView.hidden=TRUE;
+        _btnCancel.hidden=TRUE;
+        _mainHeaderlbl.text=@"Verification";
+        
+    }
+    if (buttonIndex == 1)
+    {
+        
+    }
+    
+}
+
 
 - (IBAction)btnDoneClicked:(id)sender
 {
+    
     _pickerView.hidden=TRUE;
+    
+    if ((_txtMobieNumber.keyboardType=UIKeyboardTypePhonePad))
+    {
+        
+    }
+    
+    if ((_txt_SelectCountry.inputView=singlePicker))
+    {
+        NSInteger row = [singlePicker selectedRowInComponent:0];
+        NSString *Temp = [pickerArray objectAtIndex:row];
+        NSArray *temparr = [Temp componentsSeparatedByString:@"+"];
+        NSLog(@"%@",temparr);
+        Temp = [NSString stringWithFormat:@"+%@",[temparr objectAtIndex:1]];
+        NSLog(@"%@",Temp);
+        _txtCountryCode.text=Temp;
+    }
+    
     [_txt_SelectCountry resignFirstResponder];
-    NSInteger row = [singlePicker selectedRowInComponent:0];
-    NSString *Temp = [pickerArray objectAtIndex:row];
-    NSArray *temparr = [Temp componentsSeparatedByString:@"+"];
-    NSLog(@"%@",temparr);
-    Temp = [NSString stringWithFormat:@"+%@",[temparr objectAtIndex:1]];
-    NSLog(@"%@",Temp);
-    _txtCountryCode.text=Temp;
+    [_txtMobieNumber resignFirstResponder];
+
+    
 }
+
+
+- (IBAction)btnVeficationDoneClicked:(id)sender
+{
+    _numpadViewVeriyCode.hidden=TRUE;
+    [_txtVerifyCode resignFirstResponder];
+}
+
+
+- (IBAction)wrongNumberEnterClicked:(id)sender
+{
+    _verficationView.hidden=TRUE;
+    _txtCountryCode.text=@"Code";
+    _txtMobieNumber.text=@"Mobile No";
+}
+
+
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller
+         didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
 
 
 

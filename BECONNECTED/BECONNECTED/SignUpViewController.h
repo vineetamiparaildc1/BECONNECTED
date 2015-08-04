@@ -7,13 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface SignUpViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource>
+@interface SignUpViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource,MFMailComposeViewControllerDelegate>
+{
+    MFMailComposeViewController *mailComposer;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *txt_SelectCountry;
 @property (weak, nonatomic) IBOutlet UIView *pickerView;
 @property (weak, nonatomic) IBOutlet UITextField *txtCountryCode;
 @property (weak, nonatomic) IBOutlet UITextField *txtMobieNumber;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnDone;
+
+@property (weak, nonatomic) IBOutlet UIView *verficationView;
+@property (weak, nonatomic) IBOutlet UITextView *termsCondTxtView;
+@property (weak, nonatomic) IBOutlet UIButton *btnCancel;
+
+@property (weak, nonatomic) IBOutlet UILabel *mainHeaderlbl;
+@property (weak, nonatomic) IBOutlet UIButton *btnVerificationDone;
+@property (weak, nonatomic) IBOutlet UIView *numpadViewVeriyCode;
+@property (weak, nonatomic) IBOutlet UITextField *txtVerifyCode;
 
 @end
