@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MessageUI/MessageUI.h>
 
-@interface SignUpViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource,MFMailComposeViewControllerDelegate>
-{
-    MFMailComposeViewController *mailComposer;
-}
+@interface SignUpViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UIButton *btnSelectCountry;
 
 @property (weak, nonatomic) IBOutlet UITextField *txt_SelectCountry;
 @property (weak, nonatomic) IBOutlet UIView *pickerView;

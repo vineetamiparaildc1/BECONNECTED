@@ -12,7 +12,6 @@
 {
     UIPickerView *singlePicker;
     NSArray *pickerArray;
-    int x;
 
 }
 
@@ -371,12 +370,11 @@
     }
     else
     {
-        x=1;
+        
         alert = [[UIAlertView alloc]initWithTitle:@"Required Field" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
         alert.title=@"Is your Mobile Number Correct ?";
         alert.message=[NSString stringWithFormat:@"Your mobile number is %@",_txtMobieNumber.text];
         [alert show];
-        
         
     }
 
@@ -386,17 +384,11 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     
-    if (buttonIndex == 0 && x==1)
+    if (buttonIndex == 0)
     {
-        mailComposer = [[MFMailComposeViewController alloc]init];
-        mailComposer.mailComposeDelegate = self;
-        [mailComposer setSubject:@"Verification Code"];
-        [mailComposer setMessageBody:@"Your Verification Code is 1234" isHTML:NO];
-        [self presentViewController:mailComposer animated:YES completion:NULL];
-        _verficationView.hidden=FALSE;
+        _verficationView.hidden=TRUE;
         _termsCondTxtView.hidden=TRUE;
         _btnCancel.hidden=TRUE;
-        _mainHeaderlbl.text=@"Verification";
         
     }
     if (buttonIndex == 1)
@@ -426,6 +418,10 @@
         Temp = [NSString stringWithFormat:@"+%@",[temparr objectAtIndex:1]];
         NSLog(@"%@",Temp);
         _txtCountryCode.text=Temp;
+        [_btnSelectCountry.titleLabel setTextAlignment:NSTextAlignmentCenter];
+        [_btnSelectCountry setTitle:[NSString stringWithFormat:@"%@",[temparr objectAtIndex:0]] forState:UIControlStateNormal];
+        
+        
     }
     
     [_txt_SelectCountry resignFirstResponder];
@@ -438,6 +434,7 @@
 - (IBAction)btnVeficationDoneClicked:(id)sender
 {
     _numpadViewVeriyCode.hidden=TRUE;
+    _pickerView.hidden=TRUE;
     [_txtVerifyCode resignFirstResponder];
 }
 
@@ -447,36 +444,16 @@
     _verficationView.hidden=TRUE;
     _txtCountryCode.text=@"Code";
     _txtMobieNumber.text=@"Mobile No";
+    
+    [_btnSelectCountry.titleLabel setTextAlignment:NSTextAlignmentLeft];
+    [_btnSelectCountry setTitle:@"  Please Select a Country              >" forState:UIControlStateNormal];
 }
 
 
-
--(void)mailComposeController:(MFMailComposeViewController *)controller
-         didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+- (IBAction)didnotReceivedMailBtnClicked:(id)sender
 {
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-            NSLog(@"Mail cancelled");
-            break;
-        case MFMailComposeResultSaved:
-            NSLog(@"Mail saved");
-            break;
-        case MFMailComposeResultSent:
-            NSLog(@"Mail sent");
-            break;
-        case MFMailComposeResultFailed:
-            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
-            break;
-        default:
-            break;
-    }
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
-
-
 
 
 

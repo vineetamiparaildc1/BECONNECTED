@@ -501,12 +501,15 @@
                                             <color key="titleColor" red="0.65966303660000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didnotReceivedMailBtnClicked:" destination="SOg-vO-D39" eventType="touchUpInside" id="pM8-Qq-LZp"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" editable="NO" selectable="NO" id="MMO-Tk-XuT">
                                         <rect key="frame" x="0.0" y="59" width="320" height="548"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <mutableString key="text">This is a T&amp;Cs template for social networking websites. It has been designed to help protect the website operator from the many potential liabilities that can arise out of the operation of a social network. In addition, the template will help operators to comply with disclosure laws and to manage the licensing of copyright-protected content in an appropriate manner.
+                                        <string key="text">This is a T&amp;Cs template for social networking websites. It has been designed to help protect the website operator from the many potential liabilities that can arise out of the operation of a social network. In addition, the template will help operators to comply with disclosure laws and to manage the licensing of copyright-protected content in an appropriate manner.
 
 The T&amp;Cs are based upon the premium version of our generic website T&amp;Cs.
 
@@ -518,7 +521,7 @@ Social directory - For directory websites with social features.
 Social recruitment - For recruitment websites with social features.
 Social and affiliate - With added provisions for social websites earning money through affiliate marketing.
 Social network and subscription - For social networks with paid subscription options.
-Social reviews and questions - Combining the provisions of our social network , our reviews website and our Q&amp;A website terms and conditions.</mutableString>
+Social reviews and questions - Combining the provisions of our social network , our reviews website and our Q&amp;A website terms and conditions.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -550,6 +553,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                     <connections>
                         <outlet property="btnCancel" destination="fvI-P1-Qs8" id="JEI-Dm-pxC"/>
                         <outlet property="btnDone" destination="Fz1-sM-vCp" id="9Hd-VD-5ok"/>
+                        <outlet property="btnSelectCountry" destination="48u-iD-iej" id="xvN-Ni-ToW"/>
                         <outlet property="btnVerificationDone" destination="nfs-4F-ii2" id="mt7-bT-eFZ"/>
                         <outlet property="mainHeaderlbl" destination="EuX-zp-yqM" id="0aG-tH-4jd"/>
                         <outlet property="numpadViewVeriyCode" destination="6aT-fm-Pt4" id="Snk-J5-IYx"/>
