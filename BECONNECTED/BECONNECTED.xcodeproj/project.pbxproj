@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A904D4911B7388D7000CFB81 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A904D4901B7388D7000CFB81 /* ProfileViewController.m */; };
 		A960849C1B6A4ECE00ADD133 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A960849B1B6A4ECE00ADD133 /* main.m */; };
 		A960849F1B6A4ECE00ADD133 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A960849E1B6A4ECE00ADD133 /* AppDelegate.m */; };
 		A96084A21B6A4ECE00ADD133 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96084A11B6A4ECE00ADD133 /* ViewController.m */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		0DE28AF5AA768C9E7B685495 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2CF07A85877E8714C8A20EB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A904D48F1B7388D7000CFB81 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
+		A904D4901B7388D7000CFB81 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
 		A96084961B6A4ECE00ADD133 /* BECONNECTED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BECONNECTED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A960849A1B6A4ECE00ADD133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A960849B1B6A4ECE00ADD133 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				A96084A11B6A4ECE00ADD133 /* ViewController.m */,
 				A96A0B8B1B6F8A4D00794031 /* SignUpViewController.h */,
 				A96A0B8C1B6F8A4D00794031 /* SignUpViewController.m */,
+				A904D48F1B7388D7000CFB81 /* ProfileViewController.h */,
+				A904D4901B7388D7000CFB81 /* ProfileViewController.m */,
 				A96084A31B6A4ECE00ADD133 /* Main.storyboard */,
 				A96084A61B6A4ECE00ADD133 /* Images.xcassets */,
 				A96084A81B6A4ECE00ADD133 /* LaunchScreen.xib */,
@@ -334,6 +339,7 @@
 				A960849F1B6A4ECE00ADD133 /* AppDelegate.m in Sources */,
 				A96A0B8D1B6F8A4D00794031 /* SignUpViewController.m in Sources */,
 				A960849C1B6A4ECE00ADD133 /* main.m in Sources */,
+				A904D4911B7388D7000CFB81 /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +471,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BECONNECTED",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BECONNECTED/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -480,6 +487,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BECONNECTED",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BECONNECTED/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

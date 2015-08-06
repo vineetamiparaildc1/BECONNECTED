@@ -11,7 +11,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
-
+#import <Parse.h>
 
 @interface AppDelegate ()
 
@@ -21,6 +21,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Override point for customization after application launch.
     //Twitter
     [Fabric with:@[TwitterKit]];
@@ -29,6 +30,13 @@
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
     //[GIDSignIn sharedInstance].delegate = self;
+    [Parse setApplicationId:@"rNxKqeFz6fCWFOD90Rmfa6iWAuhV678cwT2sT81x" clientKey:@"aJpm6VWLLGTxBbtzJv43nMq74zDUuxnwF8jKDVi3"];
+    
+    PFACL *aACL = [PFACL ACL];
+    [aACL setPublicReadAccess:YES];
+    [aACL setPublicWriteAccess:YES];
+    
+    [PFACL setDefaultACL:aACL withAccessForCurrentUser:YES];
     
     //Facebook
     return [[FBSDKApplicationDelegate sharedInstance] application:application

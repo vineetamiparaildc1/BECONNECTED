@@ -4,3 +4,7 @@ pod 'Google/SignIn'
 pod 'Fabric'
 pod 'TwitterKit'
 pod 'TwitterCore'
+
+platform :ios, '7.0'
+
+pod 'Parse'

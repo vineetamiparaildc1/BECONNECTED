@@ -7,12 +7,13 @@
 //
 
 #import "SignUpViewController.h"
+#import <Parse.h>
 
 @interface SignUpViewController ()
 {
     UIPickerView *singlePicker;
     NSArray *pickerArray;
-
+    NSInteger x;
 }
 
 @end
@@ -370,7 +371,7 @@
     }
     else
     {
-        
+        x=1;
         alert = [[UIAlertView alloc]initWithTitle:@"Required Field" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
         alert.title=@"Is your Mobile Number Correct ?";
         alert.message=[NSString stringWithFormat:@"Your mobile number is %@",_txtMobieNumber.text];
@@ -384,8 +385,27 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     
-    if (buttonIndex == 0)
+    if (buttonIndex == 0 && x==1)
     {
+        x=0;
+        PFUser *user=[PFUser user];
+        user.username = @"b";
+        user.email = @"vineeet.amipara.ildc@gmail.com";
+        user.password=@"b";
+        
+        
+        [user setObject:[NSString stringWithFormat:@"%@",_txtCountryCode.text] forKey:@"countrycode"];
+        [user setObject:[NSString stringWithFormat:@"%@",_txtMobieNumber.text] forKey:@"mobileno"];
+        [user setObject:[NSString stringWithFormat:@"%@",_btnSelectCountry.titleLabel.text] forKey:@"countryname"];
+        
+        
+        [user signUpInBackgroundWithBlock:^(BOOL success,NSError *error){
+            if (success) {
+                NSLog(@"User Saved");
+                
+                
+            }
+        }];
         _verficationView.hidden=TRUE;
         _termsCondTxtView.hidden=TRUE;
         _btnCancel.hidden=TRUE;
