@@ -12,7 +12,8 @@
 #import <TwitterKit/TwitterKit.h>
 #import "SignUpViewController.h"
 #import <MessageUI/MessageUI.h>
-
+#import "ProfileViewController.h"
+#import <Parse.h>
 
 @interface ViewController ()
 
@@ -91,6 +92,7 @@ didSignInForUser:(GIDGoogleUser *)user
     if ([FBSDKAccessToken currentAccessToken])
     {
         [self getFbInfo];
+        
     }
     else{
         
@@ -149,9 +151,65 @@ didSignInForUser:(GIDGoogleUser *)user
         if (!error)
         {
             NSLog(@"Result = %@",result);
-            //[FBSDKAccessToken setCurrentAccessToken:nil];
+            
+            
+            NSDictionary *temp= result;
+            PFUser *user=[PFUser user];
+            user.username = [temp objectForKey:@"name"];
+            user.password = [temp objectForKey:@"id"];
+            user.email = @"vineeeet.amipara.ildc@gmail.com";
+    
+            
+            [user signUpInBackgroundWithBlock:^(BOOL success,NSError *error)
+            {
+                if (success)
+                {
+                    NSLog(@"User Saved");
+                    {
+                        //Getting FBImageUrl From Dictionary Results
+                        NSMutableDictionary *DicFbImageUrl = result;
+                        DicFbImageUrl = [DicFbImageUrl objectForKey:@"picture"];
+                        DicFbImageUrl = [DicFbImageUrl objectForKey:@"data"];
+                        NSString *StrFbImageUrl = [DicFbImageUrl objectForKey:@"url"];
+                        
+                        
+                        
+                        NSURL *imageURL = [NSURL URLWithString:StrFbImageUrl];
+                        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                        UIImage *image = [UIImage imageWithData:imageData];
+                        
+                        //For getting image name for PFFileName
+                        NSArray *temparr = [StrFbImageUrl componentsSeparatedByString:@"/"];
+                        StrFbImageUrl = [temparr lastObject];
+                        temparr = [StrFbImageUrl componentsSeparatedByString:@"?"];
+                        
+                        
+                        NSData *imageData1 = UIImageJPEGRepresentation(image,1.0);
+                        PFFile *imageFile = [PFFile fileWithName:[temparr firstObject] data:imageData1];
+                        [user setObject:imageFile forKey:@"profilepic"];
+                    
+                        
+                        [imageFile saveInBackground];
+                        
+                        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+                        {
+                            if (!error)
+                            {
+                                ProfileViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+                                [self presentViewController:obj animated:YES completion:nil];
+ 
+                            }
+                        }];
+                    }
+                    
+                }
+                
+            }];
+            
+            
         }
     }];
+    
 }
 
 

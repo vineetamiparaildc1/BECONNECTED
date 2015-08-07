@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "ProfileViewController.h"
 #import <Parse.h>
 
 @interface SignUpViewController ()
@@ -406,10 +407,13 @@
                 
             }
         }];
-        _verficationView.hidden=TRUE;
-        _termsCondTxtView.hidden=TRUE;
-        _btnCancel.hidden=TRUE;
         
+        
+        ProfileViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+        [self presentViewController:obj animated:YES completion:nil];
+
+        
+    
     }
     if (buttonIndex == 1)
     {
@@ -447,7 +451,6 @@
     [_txt_SelectCountry resignFirstResponder];
     [_txtMobieNumber resignFirstResponder];
 
-    
 }
 
 

@@ -18,6 +18,8 @@
 		A96A0B891B6F83EB00794031 /* belogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A96A0B871B6F83EB00794031 /* belogo.jpg */; };
 		A96A0B8A1B6F83EB00794031 /* btn_information.png in Resources */ = {isa = PBXBuildFile; fileRef = A96A0B881B6F83EB00794031 /* btn_information.png */; };
 		A96A0B8D1B6F8A4D00794031 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96A0B8C1B6F8A4D00794031 /* SignUpViewController.m */; };
+		A98132551B74AD500053042C /* women-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = A98132531B74AD500053042C /* women-profile.png */; };
+		A98132561B74AD500053042C /* man-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = A98132541B74AD500053042C /* man-profile.png */; };
 		A9854D171B70BC0600A5142D /* cancel-png.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A9854D161B70BC0600A5142D /* cancel-png.jpeg */; };
 		A9854D191B70DBF800A5142D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9854D181B70DBF800A5142D /* MessageUI.framework */; };
 		A9E821CF1B6B8C9D004D5CD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9E821CE1B6B8C9D004D5CD6 /* GoogleService-Info.plist */; };
@@ -59,6 +61,8 @@
 		A96A0B881B6F83EB00794031 /* btn_information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_information.png; sourceTree = "<group>"; };
 		A96A0B8B1B6F8A4D00794031 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		A96A0B8C1B6F8A4D00794031 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		A98132531B74AD500053042C /* women-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "women-profile.png"; sourceTree = "<group>"; };
+		A98132541B74AD500053042C /* man-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man-profile.png"; sourceTree = "<group>"; };
 		A9854D161B70BC0600A5142D /* cancel-png.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cancel-png.jpeg"; sourceTree = "<group>"; };
 		A9854D181B70DBF800A5142D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A9E821CE1B6B8C9D004D5CD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		A960848D1B6A4ECE00ADD133 = {
 			isa = PBXGroup;
 			children = (
+				A98132531B74AD500053042C /* women-profile.png */,
+				A98132541B74AD500053042C /* man-profile.png */,
 				A96A0B871B6F83EB00794031 /* belogo.jpg */,
 				A9854D161B70BC0600A5142D /* cancel-png.jpeg */,
 				A96A0B881B6F83EB00794031 /* btn_information.png */,
@@ -264,6 +270,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98132561B74AD500053042C /* man-profile.png in Resources */,
+				A98132551B74AD500053042C /* women-profile.png in Resources */,
 				A9E821CF1B6B8C9D004D5CD6 /* GoogleService-Info.plist in Resources */,
 				A96084A51B6A4ECE00ADD133 /* Main.storyboard in Resources */,
 				A9854D171B70BC0600A5142D /* cancel-png.jpeg in Resources */,
