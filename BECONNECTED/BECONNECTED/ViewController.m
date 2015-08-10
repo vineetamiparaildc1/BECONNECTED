@@ -195,17 +195,20 @@ didSignInForUser:(GIDGoogleUser *)user
                         {
                             if (!error)
                             {
-                                ProfileViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
-                                [self presentViewController:obj animated:YES completion:nil];
+                                
  
                             }
                         }];
+                        
+                        
+
                     }
                     
                 }
                 
             }];
-            
+            ProfileViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+            [self presentViewController:obj animated:YES completion:nil];
             
         }
     }];

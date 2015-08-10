@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController<UIScrollViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profPicImgView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrView;
+- (IBAction)btnProfilePicClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnProfilePic;
 
 @end
