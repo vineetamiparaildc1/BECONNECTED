@@ -14,4 +14,18 @@
 - (IBAction)btnProfilePicClicked:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnProfilePic;
 
+
+@property (weak, nonatomic) IBOutlet UITextField *txtFirstName;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtLastName;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtEmailID;
+
+@property (weak, nonatomic) IBOutlet UITextField *txt_UserName;
+
+@property (weak, nonatomic) IBOutlet UITextField *txt_Password;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *seg_Gender;
+
+
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="pcX-u5-8Eo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -391,33 +391,6 @@ Social reviews and questions - Combining the provisions of our social network , 
             </objects>
             <point key="canvasLocation" x="-515" y="-122"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="66Z-AY-YAn">
-            <objects>
-                <viewController id="oZJ-Fa-rsy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="f8q-sH-JTx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Near Me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wq9-L7-BmW">
-                                <rect key="frame" x="41" y="30" width="239" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="0.5" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="08Y-Ll-Ji6">
-                                <rect key="frame" x="0.0" y="69" width="320" height="456"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1bd-af-Zww" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="161" y="-122"/>
-        </scene>
         <!--Profile View Controller-->
         <scene sceneID="7mK-sz-MxW">
             <objects>
@@ -603,6 +576,12 @@ Social reviews and questions - Combining the provisions of our social network , 
                     <connections>
                         <outlet property="btnProfilePic" destination="DUe-sw-1WT" id="Mel-oR-iqd"/>
                         <outlet property="scrView" destination="NY1-OY-DQe" id="QWh-8h-Rki"/>
+                        <outlet property="seg_Gender" destination="ZMj-zT-cTq" id="o31-eS-R5d"/>
+                        <outlet property="txtEmailID" destination="uVX-EF-doE" id="BZT-E5-bEB"/>
+                        <outlet property="txtFirstName" destination="rbf-Vl-9NC" id="ebi-GG-9aJ"/>
+                        <outlet property="txtLastName" destination="02T-B0-yvw" id="OIt-FS-Kj1"/>
+                        <outlet property="txt_Password" destination="GYd-VX-QaX" id="2Mt-fq-lDJ"/>
+                        <outlet property="txt_UserName" destination="NUC-6p-c7P" id="YPp-gs-jhx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRR-dn-o2O" sceneMemberID="firstResponder"/>
@@ -670,7 +649,7 @@ Social reviews and questions - Combining the provisions of our social network , 
         <!--Setting-->
         <scene sceneID="0E5-hU-9YX">
             <objects>
-                <viewController title="Setting" id="3di-Ta-cM6" customClass="SettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingViewController" title="Setting" id="3di-Ta-cM6" customClass="SettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R75-to-TqO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -851,7 +830,7 @@ Social reviews and questions - Combining the provisions of our social network , 
         <!--Notification View Controller-->
         <scene sceneID="B9i-8r-YhZ">
             <objects>
-                <tabBarController id="pcX-u5-8Eo" customClass="NotificationViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="NotificationViewController" id="pcX-u5-8Eo" customClass="NotificationViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="6Wp-E4-Qsw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -861,11 +840,11 @@ Social reviews and questions - Combining the provisions of our social network , 
                         <color key="barTintColor" red="0.70375631309999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="IhP-N0-DsR" kind="relationship" relationship="viewControllers" id="k5g-Db-VSh"/>
-                        <segue destination="wNQ-VB-YJ4" kind="relationship" relationship="viewControllers" id="QLQ-Px-RGL"/>
-                        <segue destination="nPg-Sj-b0s" kind="relationship" relationship="viewControllers" id="gQV-dp-2ag"/>
-                        <segue destination="JSj-NA-abM" kind="relationship" relationship="viewControllers" id="TfM-ii-7hh"/>
-                        <segue destination="3di-Ta-cM6" kind="relationship" relationship="viewControllers" id="5fW-uB-Rai"/>
+                        <segue destination="IhP-N0-DsR" kind="relationship" relationship="viewControllers" id="D0c-Tp-GId"/>
+                        <segue destination="wNQ-VB-YJ4" kind="relationship" relationship="viewControllers" id="Cts-M9-xng"/>
+                        <segue destination="nPg-Sj-b0s" kind="relationship" relationship="viewControllers" id="YQN-FG-bGe"/>
+                        <segue destination="JSj-NA-abM" kind="relationship" relationship="viewControllers" id="nXj-YQ-VTh"/>
+                        <segue destination="3di-Ta-cM6" kind="relationship" relationship="viewControllers" id="psa-Ya-mFq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6i-BZ-tni" userLabel="First Responder" sceneMemberID="firstResponder"/>

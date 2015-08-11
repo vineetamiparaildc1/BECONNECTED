@@ -10,8 +10,8 @@
 #import <Google/SignIn.h>
 
 
-@interface ViewController : UIViewController<GIDSignInDelegate,GIDSignInUIDelegate>
--(IBAction)btnGoogleSignInClicked:(id)sender;
+@interface ViewController : UIViewController
+
 - (IBAction)btnFBSignInClicked:(id)sender;
 - (IBAction)btnTwitterSignIn:(id)sender;
 

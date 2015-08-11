@@ -10,6 +10,10 @@
 #import "ProfileViewController.h"
 #import <audiotoolbox/AudioServices.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <TwitterKit/TwitterKit.h>
+#import "ViewController.h"
 
 @interface SettingViewController ()
 
@@ -37,7 +41,25 @@
 
 - (IBAction)btnLogoutClick:(id)sender
 {
-    
+    NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginProfile"];
+
+    if([savedValue isEqualToString:@"Facebook"])
+    {
+        [FBSDKAccessToken setCurrentAccessToken:nil];
+        [FBSDKProfile setCurrentProfile:nil];
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"LoginProfile"];
+    }
+    else if ([savedValue isEqualToString:@"Twitter"])
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"LoginProfile"];
+        [[Twitter sharedInstance]logOut];
+    }
+    else
+    {
+    }
+    ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    [self presentViewController:obj animated:YES completion:nil];
+
 }
 
 
