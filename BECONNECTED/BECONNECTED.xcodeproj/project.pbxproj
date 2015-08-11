@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A904D4911B7388D7000CFB81 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A904D4901B7388D7000CFB81 /* ProfileViewController.m */; };
+		A925641F1B79F194001A57E4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A925641E1B79F194001A57E4 /* SettingsViewController.m */; };
+		A92564221B79F220001A57E4 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92564211B79F220001A57E4 /* NotificationsViewController.m */; };
 		A960849C1B6A4ECE00ADD133 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A960849B1B6A4ECE00ADD133 /* main.m */; };
 		A960849F1B6A4ECE00ADD133 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A960849E1B6A4ECE00ADD133 /* AppDelegate.m */; };
 		A96084A21B6A4ECE00ADD133 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96084A11B6A4ECE00ADD133 /* ViewController.m */; };
@@ -22,8 +24,6 @@
 		A98132561B74AD500053042C /* man-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = A98132541B74AD500053042C /* man-profile.png */; };
 		A9854D171B70BC0600A5142D /* cancel-png.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A9854D161B70BC0600A5142D /* cancel-png.jpeg */; };
 		A9854D191B70DBF800A5142D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9854D181B70DBF800A5142D /* MessageUI.framework */; };
-		A9A6CFED1B78B05D0049E0DB /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A6CFEC1B78B05D0049E0DB /* NotificationViewController.m */; };
-		A9A6CFF01B78BB450049E0DB /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A6CFEF1B78BB450049E0DB /* SettingViewController.m */; };
 		A9E821CF1B6B8C9D004D5CD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9E821CE1B6B8C9D004D5CD6 /* GoogleService-Info.plist */; };
 		A9E821D31B6B957B004D5CD6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E821D01B6B957B004D5CD6 /* FBSDKCoreKit.framework */; };
 		A9E821D41B6B957B004D5CD6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E821D11B6B957B004D5CD6 /* FBSDKLoginKit.framework */; };
@@ -46,6 +46,10 @@
 		2CF07A85877E8714C8A20EB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A904D48F1B7388D7000CFB81 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
 		A904D4901B7388D7000CFB81 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
+		A925641D1B79F194001A57E4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../SettingsViewController.h; sourceTree = "<group>"; };
+		A925641E1B79F194001A57E4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
+		A92564201B79F220001A57E4 /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationsViewController.h; path = ../NotificationsViewController.h; sourceTree = "<group>"; };
+		A92564211B79F220001A57E4 /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationsViewController.m; path = ../NotificationsViewController.m; sourceTree = "<group>"; };
 		A96084961B6A4ECE00ADD133 /* BECONNECTED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BECONNECTED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A960849A1B6A4ECE00ADD133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A960849B1B6A4ECE00ADD133 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -67,10 +71,6 @@
 		A98132541B74AD500053042C /* man-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man-profile.png"; sourceTree = "<group>"; };
 		A9854D161B70BC0600A5142D /* cancel-png.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cancel-png.jpeg"; sourceTree = "<group>"; };
 		A9854D181B70DBF800A5142D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		A9A6CFEB1B78B05D0049E0DB /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationViewController.h; path = ../NotificationViewController.h; sourceTree = "<group>"; };
-		A9A6CFEC1B78B05D0049E0DB /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationViewController.m; path = ../NotificationViewController.m; sourceTree = "<group>"; };
-		A9A6CFEE1B78BB450049E0DB /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = ../SettingViewController.h; sourceTree = "<group>"; };
-		A9A6CFEF1B78BB450049E0DB /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ../SettingViewController.m; sourceTree = "<group>"; };
 		A9E821CE1B6B8C9D004D5CD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9E821D01B6B957B004D5CD6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A9E821D11B6B957B004D5CD6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -158,10 +158,10 @@
 				A96A0B8C1B6F8A4D00794031 /* SignUpViewController.m */,
 				A904D48F1B7388D7000CFB81 /* ProfileViewController.h */,
 				A904D4901B7388D7000CFB81 /* ProfileViewController.m */,
-				A9A6CFEB1B78B05D0049E0DB /* NotificationViewController.h */,
-				A9A6CFEC1B78B05D0049E0DB /* NotificationViewController.m */,
-				A9A6CFEE1B78BB450049E0DB /* SettingViewController.h */,
-				A9A6CFEF1B78BB450049E0DB /* SettingViewController.m */,
+				A92564201B79F220001A57E4 /* NotificationsViewController.h */,
+				A92564211B79F220001A57E4 /* NotificationsViewController.m */,
+				A925641D1B79F194001A57E4 /* SettingsViewController.h */,
+				A925641E1B79F194001A57E4 /* SettingsViewController.m */,
 				A96084A31B6A4ECE00ADD133 /* Main.storyboard */,
 				A96084A61B6A4ECE00ADD133 /* Images.xcassets */,
 				A96084A81B6A4ECE00ADD133 /* LaunchScreen.xib */,
@@ -354,12 +354,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A96084A21B6A4ECE00ADD133 /* ViewController.m in Sources */,
+				A92564221B79F220001A57E4 /* NotificationsViewController.m in Sources */,
 				A960849F1B6A4ECE00ADD133 /* AppDelegate.m in Sources */,
 				A96A0B8D1B6F8A4D00794031 /* SignUpViewController.m in Sources */,
-				A9A6CFF01B78BB450049E0DB /* SettingViewController.m in Sources */,
+				A925641F1B79F194001A57E4 /* SettingsViewController.m in Sources */,
 				A960849C1B6A4ECE00ADD133 /* main.m in Sources */,
 				A904D4911B7388D7000CFB81 /* ProfileViewController.m in Sources */,
-				A9A6CFED1B78B05D0049E0DB /* NotificationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

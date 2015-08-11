@@ -12,7 +12,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ViewController.h"
 #import <TwitterKit/TwitterKit.h>
-#import "NotificationViewController.h"
+#import "NotificationsViewController.h"
 
 @interface ProfileViewController ()
 {
@@ -96,8 +96,8 @@
 - (IBAction)UpdateButtonClicked:(id)sender
 {
         
-    NotificationViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"NotificationViewController"];
-    [self presentViewController:obj animated:YES completion:nil];
+    [self performSegueWithIdentifier:@"pushview" sender:nil];
+    
     //NSDictionary *temp= result;
     //PFUser *user=[PFUser user];
     //user.username = [temp objectForKey:@"name"];
@@ -233,10 +233,28 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    UIImage *origionalImage =[info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *origionalImage =[info objectForKey:UIImagePickerControllerEditedImage];
     
     [_btnProfilePic setImage:origionalImage forState:(UIControlState)nil];
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+    NSURL *imageURL = [info objectForKey:UIImagePickerControllerReferenceURL];
+    NSLog(@"URL = %@",imageURL);
+    
+    PFUser *user = [PFUser currentUser];
+    NSData *imageData = UIImageJPEGRepresentation(origionalImage,1.0);
+    PFFile *imageFile = [PFFile fileWithName:@"ProfilePic.jpg" data:imageData];
+    [imageFile saveInBackground];
+    
+    [user setObject:imageFile forKey:@"profilepic"];
+    
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        if (!error)
+        {
+            
+            
+        }
+    }];
     
     
 }
@@ -260,9 +278,6 @@
             NSString *StrFbImageUrl = [DicFbImageUrl objectForKey:@"url"];
             
             [_btnProfilePic setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:StrFbImageUrl]]] forState:(UIControlState)nil];
-            
-            
-            
             
         }
     }];

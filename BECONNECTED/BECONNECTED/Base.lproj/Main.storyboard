@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -513,36 +513,15 @@ Social reviews and questions - Combining the provisions of our social network , 
                                             <action selector="UpdateButtonClicked:" destination="ZN6-bY-vYO" eventType="touchUpInside" id="WZw-gr-DOT"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ugo-7u-1rk">
-                                        <rect key="frame" x="275" y="403" width="7" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RJu-yr-2wQ">
-                                        <rect key="frame" x="275" y="300" width="7" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="46C-od-JOz">
-                                        <rect key="frame" x="275" y="353" width="7" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man-profile.png" id="ViP-TC-MC5">
                                         <rect key="frame" x="10" y="55" width="300" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fileds marked with asterisk (*) sign are compulsory." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gXa-pO-qbV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Fileds are compulsory." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gXa-pO-qbV">
                                         <rect key="frame" x="5" y="548" width="320" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -582,6 +561,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                         <outlet property="txtLastName" destination="02T-B0-yvw" id="OIt-FS-Kj1"/>
                         <outlet property="txt_Password" destination="GYd-VX-QaX" id="2Mt-fq-lDJ"/>
                         <outlet property="txt_UserName" destination="NUC-6p-c7P" id="YPp-gs-jhx"/>
+                        <segue destination="pcX-u5-8Eo" kind="modal" identifier="pushview" id="8nD-rT-IwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRR-dn-o2O" sceneMemberID="firstResponder"/>
@@ -601,7 +581,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWg-hh-bvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-326" y="590"/>
+            <point key="canvasLocation" x="-326" y="595"/>
         </scene>
         <!--Chats-->
         <scene sceneID="Y1w-pC-U8h">
@@ -649,18 +629,11 @@ Social reviews and questions - Combining the provisions of our social network , 
         <!--Setting-->
         <scene sceneID="0E5-hU-9YX">
             <objects>
-                <viewController storyboardIdentifier="SettingViewController" title="Setting" id="3di-Ta-cM6" customClass="SettingViewController" sceneMemberID="viewController">
+                <viewController title="Setting" id="3di-Ta-cM6" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R75-to-TqO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xSj-PK-ZYo">
-                                <rect key="frame" x="41" y="20" width="239" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="0.5" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4K5-sH-3L1">
                                 <rect key="frame" x="1" y="64" width="318" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -803,34 +776,27 @@ Social reviews and questions - Combining the provisions of our social network , 
                                     <action selector="SwitchClicked:" destination="3di-Ta-cM6" eventType="valueChanged" id="rtl-ab-eUb"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xSj-PK-ZYo">
+                                <rect key="frame" x="41" y="20" width="239" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" id="cDp-na-wEE"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="cDp-na-wEE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sub-gk-yYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-316" y="1293"/>
+            <point key="canvasLocation" x="-326" y="1293"/>
         </scene>
-        <!--Notifications-->
-        <scene sceneID="vVO-fj-uuo">
-            <objects>
-                <viewController title="Notifications" id="IhP-N0-DsR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LZp-xA-CjS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Notifications" id="Ro1-1x-B4a"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fBt-fs-rmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-710" y="590"/>
-        </scene>
-        <!--Notification View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="B9i-8r-YhZ">
             <objects>
-                <tabBarController storyboardIdentifier="NotificationViewController" id="pcX-u5-8Eo" customClass="NotificationViewController" sceneMemberID="viewController">
+                <tabBarController id="pcX-u5-8Eo" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vsA-M9-J2g"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="6Wp-E4-Qsw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -840,16 +806,32 @@ Social reviews and questions - Combining the provisions of our social network , 
                         <color key="barTintColor" red="0.70375631309999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="IhP-N0-DsR" kind="relationship" relationship="viewControllers" id="D0c-Tp-GId"/>
-                        <segue destination="wNQ-VB-YJ4" kind="relationship" relationship="viewControllers" id="Cts-M9-xng"/>
-                        <segue destination="nPg-Sj-b0s" kind="relationship" relationship="viewControllers" id="YQN-FG-bGe"/>
-                        <segue destination="JSj-NA-abM" kind="relationship" relationship="viewControllers" id="nXj-YQ-VTh"/>
-                        <segue destination="3di-Ta-cM6" kind="relationship" relationship="viewControllers" id="psa-Ya-mFq"/>
+                        <segue destination="0CU-Fv-QbB" kind="relationship" relationship="viewControllers" id="2Nq-36-Eaq"/>
+                        <segue destination="wNQ-VB-YJ4" kind="relationship" relationship="viewControllers" id="Abf-hy-NMc"/>
+                        <segue destination="nPg-Sj-b0s" kind="relationship" relationship="viewControllers" id="rWp-J5-JqA"/>
+                        <segue destination="JSj-NA-abM" kind="relationship" relationship="viewControllers" id="kp9-ha-pQw"/>
+                        <segue destination="3di-Ta-cM6" kind="relationship" relationship="viewControllers" id="aps-qm-Eyt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6i-BZ-tni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1102" y="590"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="rzI-9n-6Bs">
+            <objects>
+                <viewController storyboardIdentifier="NotificationsViewController" title="Notifications" id="0CU-Fv-QbB" customClass="NotificationsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b09-74-GaD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Notifications" id="UrL-9r-AMu"/>
+                    <navigationItem key="navigationItem" id="Hio-Mo-4lg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36T-cp-lpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-718" y="598"/>
         </scene>
     </scenes>
     <resources>
