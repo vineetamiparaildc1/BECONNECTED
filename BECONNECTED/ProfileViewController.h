@@ -27,5 +27,8 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *seg_Gender;
 
+@property (weak, nonatomic) IBOutlet UITextField *txtCountryName;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtMobileNum;
 
 @end

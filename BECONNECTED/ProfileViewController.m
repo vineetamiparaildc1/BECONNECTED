@@ -96,74 +96,121 @@
 - (IBAction)UpdateButtonClicked:(id)sender
 {
         
-    [self performSegueWithIdentifier:@"pushview" sender:nil];
+    // [self performSegueWithIdentifier:@"pushview" sender:nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Required Field" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
-    //NSDictionary *temp= result;
-    //PFUser *user=[PFUser user];
-    //user.username = [temp objectForKey:@"name"];
-    //user.password = [temp objectForKey:@"id"];
-    //user.email = @"vineeeet.amipara.ildc@gmail.com";
+    if ([_txt_UserName.text isEqualToString:@"User Name"] || _txt_UserName.text.length == 0)
+    {
+        alert.message=@"Please Enter Username";
+        [alert show];
+    }
     
-    
-    //             [user signUpInBackgroundWithBlock:^(BOOL success,NSError *error)
-    //             {
-    //                 if (success)
-    //                 {
-    //                     NSLog(@"User Saved");
-    //                     {
-    //                         //Getting FBImageUrl From Dictionary Results
-    //                         NSMutableDictionary *DicFbImageUrl = result;
-    //                         DicFbImageUrl = [DicFbImageUrl objectForKey:@"picture"];
-    //                         DicFbImageUrl = [DicFbImageUrl objectForKey:@"data"];
-    //                         NSString *StrFbImageUrl = [DicFbImageUrl objectForKey:@"url"];
-    //
-    //
-    //
-    //                         NSURL *imageURL = [NSURL URLWithString:StrFbImageUrl];
-    //                         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-    //                         UIImage *image = [UIImage imageWithData:imageData];
-    //
-    //                         [_btnProfilePic setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:StrFbImageUrl]]] forState:(UIControlState)nil];
-    //
-    //
-    //                         //For getting image name for PFFileName
-    //                         NSArray *temparr = [StrFbImageUrl componentsSeparatedByString:@"/"];
-    //                         StrFbImageUrl = [temparr lastObject];
-    //                         temparr = [StrFbImageUrl componentsSeparatedByString:@"?"];
-    //
-    //
-    //                         NSData *imageData1 = UIImageJPEGRepresentation(image,1.0);
-    //                         PFFile *imageFile = [PFFile fileWithName:[temparr firstObject] data:imageData1];
-    //                         [user setObject:imageFile forKey:@"profilepic"];
-    //
-    //
-    //                         [imageFile saveInBackground];
-    //
-    //                         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-    //                          {
-    //                              if (!error)
-    //                              {
-    //
-    //
-    //                              }
-    //                          }];
-    //
-    //
-    //
-    //                     }
-    //                     
-    //                 }
-    //                 
-    //             }];
-    
-    //ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-    //[self presentViewController:obj animated:YES completion:nil];
+    else if ([_txt_Password.text isEqualToString:@"Password"] || _txt_Password.text.length == 0)
+    {
+        alert.message=@"Please Enter Password";
+        [alert show];
+    }
+    else if ([_txtEmailID.text isEqualToString:@"Email-ID"] || _txtEmailID.text.length == 0)
+    {
+        alert.message=@"Please Enter Email-ID";
+        [alert show];
+    }
+    else if([_txtFirstName.text isEqualToString:@"First Name"] || _txtFirstName.text.length == 0)
+    {
+        alert.message=@"Please Enter FirstName";
+        [alert show];
+    }
+    else if([_txtLastName.text isEqualToString:@"Last Name"] || _txtLastName.text.length == 0)
+    {
+        alert.message=@"Please Enter LastName";
+        [alert show];
+    }
+    else if([_txtCountryName.text isEqualToString:@"Select Country        >"] || _txtCountryName.text.length == 0)
+    {
+        alert.message=@"Please Enter CountryName";
+        [alert show];
+    }
+    else if([_txtMobileNum.text isEqualToString:@"First Name"] || _txtMobileNum.text.length == 0)
+    {
+        alert.message=@"Please Enter MobileNumber";
+        [alert show];
+    }else{
+        
+        //NSDictionary *temp= result;
+        PFUser *user=[PFUser user];
+        user.username = _txt_UserName.text;
+        user.password = _txt_Password.text;
+        user.email =  _txtEmailID.text;
+        NSLog(@"Email = %@",_txtEmailID.text);
+        
+        [user setObject:_txtFirstName.text forKey:@"firstname"];
+        [user setObject:_txtLastName.text forKey:@"lastname"];
+        [user setObject:_txtCountryName.text forKey:@"countryname"];
+        [user setObject:_txtMobileNum.text forKey:@"mobileno"];
+        
+        
+        
+        [user signUpInBackgroundWithBlock:^(BOOL success,NSError *error)
+         {
+             if (success)
+             {
+                 NSLog(@"User Saved");
+                 {
+                     //Getting FBImageUrl From Dictionary Results
+                     //                             NSMutableDictionary *DicFbImageUrl = result;
+                     //                             DicFbImageUrl = [DicFbImageUrl objectForKey:@"picture"];
+                     //                             DicFbImageUrl = [DicFbImageUrl objectForKey:@"data"];
+                     //                             NSString *StrFbImageUrl = [DicFbImageUrl objectForKey:@"url"];
+                     //
+                     //
+                     //
+                     //                             NSURL *imageURL = [NSURL URLWithString:StrFbImageUrl];
+                     //                             NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                     //                             UIImage *image = [UIImage imageWithData:imageData];
+                     //
+                     //                             [_btnProfilePic setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:StrFbImageUrl]]] forState:(UIControlState)nil];
+                     //
+                     //
+                     //                             //For getting image name for PFFileName
+                     //                             NSArray *temparr = [StrFbImageUrl componentsSeparatedByString:@"/"];
+                     //                             StrFbImageUrl = [temparr lastObject];
+                     //                             temparr = [StrFbImageUrl componentsSeparatedByString:@"?"];
+                     
+                     UIImage *image = _btnProfilePic.imageView.image;
+                     NSData *imageData = UIImageJPEGRepresentation(image,1.0);
+                     PFFile *imageFile = [PFFile fileWithName:@"ProfilePic" data:imageData];
+                     [user setObject:imageFile forKey:@"profilepic"];
+                     
+                     
+                     [imageFile saveInBackground];
+                     
+                     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+                      {
+                          if (!error)
+                          {
+                              //                                      ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+                              //                                      [self presentViewController:obj animated:YES completion:nil];
+                              
+                          }
+                      }];
+                     
+                     
+                     
+                 }
+                 
+             }
+             
+         }];
+        
+        
+    }
 }
 
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [self scrollViewToCenterOfScreen:textField];
+     textField.text=@"";
 }
 
 
