@@ -403,6 +403,11 @@ Social reviews and questions - Combining the provisions of our social network , 
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_information.png" id="4e7-ui-u9m">
+                                        <rect key="frame" x="5" y="56" width="310" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234567890123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y2u-Mp-IPH">
                                         <rect key="frame" x="50" y="77" width="101" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -410,7 +415,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         <color key="textColor" red="0.80539772730000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" minimumFontSize="17" id="rbf-Vl-9NC">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please Enter Full Name" minimumFontSize="17" id="rbf-Vl-9NC">
                                         <rect key="frame" x="50" y="200" width="220" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91983632380000002" blue="0.90627613060000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -421,7 +426,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                                             <outlet property="delegate" destination="ZN6-bY-vYO" id="N1z-8D-992"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" minimumFontSize="17" id="02T-B0-yvw">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please Enter Status" minimumFontSize="17" clearButtonMode="always" id="02T-B0-yvw">
                                         <rect key="frame" x="50" y="250" width="220" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91983632380000002" blue="0.90627613060000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -432,7 +437,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                                             <outlet property="delegate" destination="ZN6-bY-vYO" id="v2N-Ay-MKf"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email-ID" minimumFontSize="17" id="uVX-EF-doE">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please Enter Email ID" minimumFontSize="17" clearButtonMode="always" id="uVX-EF-doE">
                                         <rect key="frame" x="50" y="300" width="220" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91983632380000002" blue="0.90627613060000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -443,7 +448,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                                             <outlet property="delegate" destination="ZN6-bY-vYO" id="Ij9-00-6op"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="User Name" minimumFontSize="17" id="NUC-6p-c7P">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please Enter User Name" minimumFontSize="17" clearButtonMode="always" id="NUC-6p-c7P">
                                         <rect key="frame" x="50" y="350" width="220" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91983632380000002" blue="0.90627613060000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -454,13 +459,13 @@ Social reviews and questions - Combining the provisions of our social network , 
                                             <outlet property="delegate" destination="ZN6-bY-vYO" id="bId-MO-JWd"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" minimumFontSize="17" id="GYd-VX-QaX">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please Enter Password" minimumFontSize="17" clearButtonMode="always" id="GYd-VX-QaX">
                                         <rect key="frame" x="50" y="400" width="220" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91983632380000002" blue="0.90627613060000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.70375631309999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="ZN6-bY-vYO" id="dd0-Tm-GFo"/>
                                         </connections>
@@ -495,11 +500,6 @@ Social reviews and questions - Combining the provisions of our social network , 
                                             <action selector="UpdateButtonClicked:" destination="ZN6-bY-vYO" eventType="touchUpInside" id="WZw-gr-DOT"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man-profile.png" id="ViP-TC-MC5">
-                                        <rect key="frame" x="10" y="55" width="300" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Fileds are compulsory." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gXa-pO-qbV">
                                         <rect key="frame" x="5" y="548" width="320" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -507,7 +507,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Mobile Number" minimumFontSize="17" id="kqt-TX-dxN">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Mobile No" minimumFontSize="17" clearButtonMode="always" id="kqt-TX-dxN">
                                         <rect key="frame" x="50" y="147" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91983632380000002" blue="0.90627613060000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -528,13 +528,6 @@ Social reviews and questions - Combining the provisions of our social network , 
                                             <action selector="btnProfilePicClicked:" destination="ZN6-bY-vYO" eventType="touchUpInside" id="SJH-jD-GrS"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aao-oH-3ag">
-                                        <rect key="frame" x="115" y="17" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" red="0.5" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nDh-Jp-yuT">
                                         <rect key="frame" x="50" y="103" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -548,14 +541,15 @@ Social reviews and questions - Combining the provisions of our social network , 
                                     <textField opaque="NO" clipsSubviews="YES" alpha="0.050000000000000003" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="5mg-fo-6Zz">
                                         <rect key="frame" x="50" y="103" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="ZN6-bY-vYO" id="sfP-R6-UzO"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vf8-vW-ZSe">
-                                        <rect key="frame" x="11" y="24" width="56" height="30"/>
+                                        <rect key="frame" x="11" y="23" width="56" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="back.jpeg">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -565,8 +559,34 @@ Social reviews and questions - Combining the provisions of our social network , 
                                             <action selector="btn_backClicked:" destination="ZN6-bY-vYO" eventType="touchUpInside" id="l5T-kj-Tc0"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aao-oH-3ag">
+                                        <rect key="frame" x="115" y="29" width="100" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" red="0.5" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" id="sgn-YZ-cLX">
+                                <rect key="frame" x="0.0" y="320" width="320" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AeX-TG-taY">
+                                        <rect key="frame" x="271" y="2" width="37" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.69057765149999994" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDoneClicked:" destination="ZN6-bY-vYO" eventType="touchUpInside" id="B38-oA-NGl"/>
+                                            <action selector="btnDoneClicked:" destination="SOg-vO-D39" eventType="touchUpInside" id="RAv-yB-uyu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -574,21 +594,22 @@ Social reviews and questions - Combining the provisions of our social network , 
                     <connections>
                         <outlet property="btnProfilePic" destination="DUe-sw-1WT" id="Mel-oR-iqd"/>
                         <outlet property="btn_SelectCountry" destination="nDh-Jp-yuT" id="t5Y-iP-w9L"/>
+                        <outlet property="pickerView" destination="sgn-YZ-cLX" id="mJu-2n-leg"/>
                         <outlet property="scrView" destination="NY1-OY-DQe" id="QWh-8h-Rki"/>
                         <outlet property="seg_Gender" destination="ZMj-zT-cTq" id="o31-eS-R5d"/>
                         <outlet property="txtEmailID" destination="uVX-EF-doE" id="BZT-E5-bEB"/>
-                        <outlet property="txtFirstName" destination="rbf-Vl-9NC" id="ebi-GG-9aJ"/>
-                        <outlet property="txtLastName" destination="02T-B0-yvw" id="OIt-FS-Kj1"/>
+                        <outlet property="txtFullName" destination="rbf-Vl-9NC" id="gAQ-mB-3Hx"/>
                         <outlet property="txtMobileNum" destination="kqt-TX-dxN" id="RQA-41-RmK"/>
+                        <outlet property="txtStatus" destination="02T-B0-yvw" id="BQT-AD-yzE"/>
                         <outlet property="txt_Password" destination="GYd-VX-QaX" id="2Mt-fq-lDJ"/>
                         <outlet property="txt_UserName" destination="NUC-6p-c7P" id="YPp-gs-jhx"/>
-                        <outlet property="txt_selectCountry" destination="5mg-fo-6Zz" id="gNe-on-4xq"/>
+                        <outlet property="txt_selectCountry" destination="5mg-fo-6Zz" id="I06-J8-C8G"/>
                         <segue destination="pcX-u5-8Eo" kind="modal" identifier="pushview" id="8nD-rT-IwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRR-dn-o2O" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-179" y="-122"/>
+            <point key="canvasLocation" x="-129" y="-122"/>
         </scene>
         <!--Friends-->
         <scene sceneID="ZVt-BM-843">

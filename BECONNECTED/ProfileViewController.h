@@ -9,19 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileViewController : UIViewController<UIScrollViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
-@property (weak, nonatomic) IBOutlet UIImageView *profPicImgView;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrView;
-- (IBAction)btnProfilePicClicked:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnProfilePic;
 
 @property (weak, nonatomic) IBOutlet UITextField *txt_selectCountry;
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_SelectCountry;
 
+@property (weak, nonatomic) IBOutlet UITextField *txtFullName;
 
-@property (weak, nonatomic) IBOutlet UITextField *txtFirstName;
-
-@property (weak, nonatomic) IBOutlet UITextField *txtLastName;
+@property (weak, nonatomic) IBOutlet UITextField *txtStatus;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtEmailID;
 
@@ -31,8 +30,9 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *seg_Gender;
 
-@property (weak, nonatomic) IBOutlet UITextField *txtCountryName;
-
 @property (weak, nonatomic) IBOutlet UITextField *txtMobileNum;
 
+@property (weak, nonatomic) IBOutlet UIView *pickerView;
+
+- (IBAction)btnProfilePicClicked:(id)sender;
 @end

@@ -30,9 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
-    
+    singlePicker = [[UIPickerView alloc]init];
     singlePicker.delegate=self;
     singlePicker.dataSource=self;
     
@@ -289,6 +287,7 @@
                        @"Zanzibar +255",
                        @"Zimbabwe +263",nil];
     }
+    
 
     self.scrView.contentSize = CGSizeMake(self.scrView.frame.size.width, 820);
     self.scrView.delegate = self;
@@ -327,54 +326,77 @@
     // [self performSegueWithIdentifier:@"pushview" sender:nil];
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Required Field" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
-    if ([_txt_UserName.text isEqualToString:@"User Name"] || _txt_UserName.text.length == 0)
+    if([_txt_selectCountry.text isEqualToString:@" "] || _txt_selectCountry.text.length == 0)
+    {
+        alert.message=@"Please Enter CountryName";
+        [alert show];
+    }
+    else if([_txtMobileNum.text isEqualToString:@" "] || _txtMobileNum.text.length == 0)
+    {
+        alert.message=@"Please Enter MobileNumber";
+        [alert show];
+    }
+    else if([_txtFullName.text isEqualToString:@" "] || _txtFullName.text.length == 0)
+    {
+        alert.message=@"Please Enter FirstName";
+        [alert show];
+    }
+    else if([_txtStatus.text isEqualToString:@" "] || _txtStatus.text.length == 0)
+    {
+        alert.message=@"Please Enter FirstName";
+        [alert show];
+    }
+    else if ([_txtEmailID.text isEqualToString:@" "] || _txtEmailID.text.length == 0)
+    {
+        alert.message=@"Please Enter Email-ID";
+        [alert show];
+    }
+    else if ([_txt_UserName.text isEqualToString:@" "] || _txt_UserName.text.length == 0)
     {
         alert.message=@"Please Enter Username";
         [alert show];
     }
     
-    else if ([_txt_Password.text isEqualToString:@"Password"] || _txt_Password.text.length == 0)
+    else if ([_txt_Password.text isEqualToString:@" "] || _txt_Password.text.length == 0)
     {
         alert.message=@"Please Enter Password";
         [alert show];
     }
-    else if ([_txtEmailID.text isEqualToString:@"Email-ID"] || _txtEmailID.text.length == 0)
-    {
-        alert.message=@"Please Enter Email-ID";
-        [alert show];
-    }
-    else if([_txtFirstName.text isEqualToString:@"First Name"] || _txtFirstName.text.length == 0)
-    {
-        alert.message=@"Please Enter FirstName";
-        [alert show];
-    }
-    else if([_txtLastName.text isEqualToString:@"Last Name"] || _txtLastName.text.length == 0)
-    {
-        alert.message=@"Please Enter LastName";
-        [alert show];
-    }
-    else if([_txtCountryName.text isEqualToString:@"Select Country        >"] || _txtCountryName.text.length == 0)
-    {
-        alert.message=@"Please Enter CountryName";
-        [alert show];
-    }
-    else if([_txtMobileNum.text isEqualToString:@"First Name"] || _txtMobileNum.text.length == 0)
-    {
-        alert.message=@"Please Enter MobileNumber";
-        [alert show];
-    }else{
+    
+    else{
         
         //NSDictionary *temp= result;
         PFUser *user=[PFUser user];
         user.username = _txt_UserName.text;
         user.password = _txt_Password.text;
         user.email =  _txtEmailID.text;
-        NSLog(@"Email = %@",_txtEmailID.text);
         
-        [user setObject:_txtFirstName.text forKey:@"firstname"];
-        [user setObject:_txtLastName.text forKey:@"lastname"];
-        [user setObject:_txtCountryName.text forKey:@"countryname"];
+        
+        NSString *Temp = _txt_selectCountry.text;
+        NSArray *temparr = [Temp componentsSeparatedByString:@"+"];
+        NSLog(@"%@",temparr);
+        
+        Temp = [NSString stringWithFormat:@"+%@",[temparr objectAtIndex:1]];
+        NSLog(@"%@",Temp);
+        
+        
+        
+        
+        
+        [user setObject:[temparr objectAtIndex:0] forKey:@"countryname"];
+        [user setObject:Temp forKey:@"countrycode"];
         [user setObject:_txtMobileNum.text forKey:@"mobileno"];
+        [user setObject:_txtFullName.text forKey:@"fullname"];
+        [user setObject:_txtStatus.text forKey:@"status"];
+        
+        if (_seg_Gender.selectedSegmentIndex == 0)
+        {
+            [user setObject:@"Male" forKey:@"gender"];
+        }
+        else
+        {
+            [user setObject:@"Female" forKey:@"gender"];
+        }
         
         
         
@@ -443,23 +465,16 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [self scrollViewToCenterOfScreen:textField];
-     textField.text=@"";
     
-    
-    
-        
-        //_pickerView.hidden=false;
-        
-        
         if (textField.tag == 10)
         {
             self.txt_selectCountry.inputView = singlePicker;
-            
+            _pickerView.hidden=FALSE;
         }
-
-    
-    
-    
+        if (textField.tag == 11)
+        {
+            _pickerView.hidden=FALSE;
+        }
 }
 
 
@@ -479,6 +494,33 @@
 }
 
 
+- (IBAction)btnDoneClicked:(id)sender
+{
+    
+    _pickerView.hidden=TRUE;
+    
+    if ((_txtMobileNum.keyboardType=UIKeyboardTypePhonePad))
+    {
+        
+    }
+    
+    if ((_txt_selectCountry.inputView=singlePicker))
+    {
+        NSInteger row = [singlePicker selectedRowInComponent:0];
+        NSString *Temp = [pickerArray objectAtIndex:row];
+        
+        [_btn_SelectCountry.titleLabel setTextAlignment:NSTextAlignmentCenter];
+        [_btn_SelectCountry setTitle:Temp forState:UIControlStateNormal];
+        _txt_selectCountry.text=Temp;
+        
+        
+    }
+    
+    [_txt_selectCountry resignFirstResponder];
+    [_txtMobileNum resignFirstResponder];
+    
+}
+
 -(void)scrollViewToCenterOfScreen:(UIView *)theView
 {
     CGFloat viewCenterY = theView.center.y;
@@ -496,9 +538,21 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    
     [textField resignFirstResponder];
     [self.scrView setContentOffset:CGPointMake(0, 0) animated:YES];
+    
+    UIAlertView *AletView = [[UIAlertView alloc]initWithTitle:@"Dear User" message:@"Please Enter Valid Email Address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    NSString *emailRegEx = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,10}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegEx];
+    
+    if ([emailTest evaluateWithObject:_txtEmailID.text] == NO && textField.tag==12)
+    {
+        [AletView show];
+    }
+    
     return YES;
+
 }
 
 
@@ -573,7 +627,6 @@
 
 
 
-
 -(void)getFbInfo
 {
     
@@ -584,6 +637,7 @@
             NSMutableDictionary *DicFbImageUrl = result;
 
             _txt_UserName.text= [DicFbImageUrl objectForKey:@"name"];
+            _txt_UserName.enabled=FALSE;
             
             DicFbImageUrl = [DicFbImageUrl objectForKey:@"picture"];
             DicFbImageUrl = [DicFbImageUrl objectForKey:@"data"];
@@ -605,10 +659,15 @@
                                                            NSError *error)
      {
          
-         if (![error isEqual:nil]) {
+         if (![error isEqual:nil])
+         {
              
              _txt_UserName.text=[NSString stringWithFormat:@"%@",user];
-             _txtFirstName.text = user.name;
+             _txt_UserName.enabled=FALSE;
+             
+             _txtFullName.text = user.name;
+             _txtFullName.enabled=FALSE;
+             
              [_btnProfilePic setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user.profileImageLargeURL]]] forState:(UIControlState)nil];
          }
          

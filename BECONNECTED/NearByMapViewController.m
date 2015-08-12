@@ -60,9 +60,14 @@
         
         
         isUserLocationLoaded = YES;
+        
     }
     
+    PFGeoPoint 	*currentlocation = [PFGeoPoint geoPointWithLocation:location];
+    PFUser *user = [PFUser currentUser];
     
+    [user setObject:currentlocation forKey:@"GeoPoint"];
+    [user saveInBackground];
     
     //Reverse geocoding
     [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
