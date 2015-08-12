@@ -12,9 +12,9 @@
 
 @interface SignUpViewController ()
 {
-    UIPickerView *singlePicker;
-    NSArray *pickerArray;
-    NSInteger x;
+       NSInteger x;
+       UIPickerView *singlePicker;
+       NSArray *pickerArray;
 }
 
 @end
@@ -285,6 +285,11 @@
 
 }
 
+- (IBAction)btnGoBackClicked:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -473,10 +478,7 @@
 }
 
 
-- (IBAction)didnotReceivedMailBtnClicked:(id)sender
-{
-    
-}
+
 
 
 

@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileViewController : UIViewController<UIScrollViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
+@interface ProfileViewController : UIViewController<UIScrollViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *profPicImgView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrView;
 - (IBAction)btnProfilePicClicked:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnProfilePic;
+
+@property (weak, nonatomic) IBOutlet UITextField *txt_selectCountry;
+
+@property (weak, nonatomic) IBOutlet UIButton *btn_SelectCountry;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFirstName;

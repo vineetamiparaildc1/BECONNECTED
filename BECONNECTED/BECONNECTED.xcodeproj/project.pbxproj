@@ -14,6 +14,7 @@
 		A92564281B7A0674001A57E4 /* NearByMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92564271B7A0674001A57E4 /* NearByMapViewController.m */; };
 		A925642B1B7A06FA001A57E4 /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A925642A1B7A06FA001A57E4 /* ChatRoomViewController.m */; };
 		A925642D1B7A079B001A57E4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A925642C1B7A079B001A57E4 /* MapKit.framework */; };
+		A94D72F61B7B444300441425 /* back.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A94D72F51B7B444300441425 /* back.jpeg */; };
 		A960849C1B6A4ECE00ADD133 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A960849B1B6A4ECE00ADD133 /* main.m */; };
 		A960849F1B6A4ECE00ADD133 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A960849E1B6A4ECE00ADD133 /* AppDelegate.m */; };
 		A96084A21B6A4ECE00ADD133 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96084A11B6A4ECE00ADD133 /* ViewController.m */; };
@@ -61,6 +62,7 @@
 		A92564291B7A06FA001A57E4 /* ChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatRoomViewController.h; path = ../ChatRoomViewController.h; sourceTree = "<group>"; };
 		A925642A1B7A06FA001A57E4 /* ChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatRoomViewController.m; path = ../ChatRoomViewController.m; sourceTree = "<group>"; };
 		A925642C1B7A079B001A57E4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A94D72F51B7B444300441425 /* back.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpeg; sourceTree = "<group>"; };
 		A96084961B6A4ECE00ADD133 /* BECONNECTED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BECONNECTED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A960849A1B6A4ECE00ADD133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A960849B1B6A4ECE00ADD133 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				A98132531B74AD500053042C /* women-profile.png */,
 				A98132541B74AD500053042C /* man-profile.png */,
+				A94D72F51B7B444300441425 /* back.jpeg */,
 				A96A0B871B6F83EB00794031 /* belogo.jpg */,
 				A9854D161B70BC0600A5142D /* cancel-png.jpeg */,
 				A96A0B881B6F83EB00794031 /* btn_information.png */,
@@ -307,6 +310,7 @@
 				A96084AA1B6A4ECE00ADD133 /* LaunchScreen.xib in Resources */,
 				A96A0B891B6F83EB00794031 /* belogo.jpg in Resources */,
 				A96084A71B6A4ECE00ADD133 /* Images.xcassets in Resources */,
+				A94D72F61B7B444300441425 /* back.jpeg in Resources */,
 				A96A0B8A1B6F83EB00794031 /* btn_information.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
