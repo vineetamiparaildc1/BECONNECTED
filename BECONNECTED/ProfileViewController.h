@@ -37,6 +37,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblMobileNumber;
 
 @property (strong, nonatomic)  NSString *strMobileNumber;
+@property (strong, nonatomic)  NSString *strCountryCode;
+@property (strong, nonatomic)  NSString *strCountryName;
+
 
 
 - (IBAction)btnProfilePicClicked:(id)sender;

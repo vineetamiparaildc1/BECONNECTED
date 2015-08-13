@@ -36,6 +36,8 @@
     ProfileViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
     [self presentViewController:obj animated:YES completion:nil];
 }
+
+
 - (IBAction)btnLogoutClick:(id)sender
 {
     NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginProfile"];
@@ -46,17 +48,17 @@
         [FBSDKProfile setCurrentProfile:nil];
 
         
-        [[NSUserDefaults standardUserDefaults] setObject:@"Logout" forKey:@"LoginProfile"];
     }
     else if ([savedValue isEqualToString:@"Twitter"])
     {
-        [[NSUserDefaults standardUserDefaults] setObject:@"Logout" forKey:@"LoginProfile"];
         [[Twitter sharedInstance]logOut];
         [[Twitter sharedInstance]logOutGuest];
     }
-    else
+    else if ([savedValue isEqualToString:@"NewUser"])
     {
+        
     }
+    [[NSUserDefaults standardUserDefaults] setObject:@" " forKey:@"LoginProfile"];
     ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
     [self presentViewController:obj animated:YES completion:nil];
     

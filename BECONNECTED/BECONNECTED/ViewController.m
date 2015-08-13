@@ -96,8 +96,35 @@
     SignUpViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"SignUpViewController"];
     [self presentViewController:obj animated:YES completion:nil];
 }
+- (IBAction)btn_LoginClicked:(id)sender
+{
+    [PFUser logInWithUsernameInBackground:_txtUsername.text password:_txtPassword.text
+                                    block:^(PFUser *user, NSError *error) {
+                                        if (user)
+                                        {
+                                            [[NSUserDefaults standardUserDefaults] setObject:[user objectId] forKey:@"LoginUserID"];
+                                            [self performSegueWithIdentifier:@"pushview" sender:nil];
+                                            
+                                        }
+                                        else
+                                        {
+                                            
+                                            UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"Please Enter Valid User and Password" message:@"Seems Like Username and Password Don't Match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                            [alert show];
+                                        }
+                                        
+
+                                    }];
+
+}
 
 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 
 @end

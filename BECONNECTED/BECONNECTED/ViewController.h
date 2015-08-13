@@ -14,6 +14,8 @@
 
 - (IBAction)btnFBSignInClicked:(id)sender;
 - (IBAction)btnTwitterSignIn:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *txtUsername;
+@property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 
 @end
 

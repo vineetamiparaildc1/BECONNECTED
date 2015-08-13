@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,13 +16,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" minimumFontSize="17" id="fNY-Xg-VwI">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" id="fNY-Xg-VwI">
                                         <rect key="frame" x="36" y="225" width="248" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91983632380000002" blue="0.90627613060000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.76114662249999998" green="0.0078416194300000002" blue="0.023144699639999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Hbb-DV-4OJ" id="QfT-Qo-Hhz"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MoD-lc-MCw">
                                         <rect key="frame" x="98" y="320" width="125" height="15"/>
@@ -96,14 +99,20 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btn_LoginClicked:" destination="Hbb-DV-4OJ" eventType="touchUpInside" id="z9X-Tg-bd2"/>
+                                        </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="UserName/Mobile No" minimumFontSize="17" id="pni-li-8jD">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" minimumFontSize="17" clearButtonMode="whileEditing" id="pni-li-8jD">
                                         <rect key="frame" x="36" y="170" width="248" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91983632380000002" blue="0.90627613060000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.71807922980000005" green="0.007518523868" blue="0.01473671426" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Hbb-DV-4OJ" id="iWt-RG-2nf"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -111,6 +120,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="txtPassword" destination="fNY-Xg-VwI" id="SqI-pO-xAd"/>
+                        <outlet property="txtUsername" destination="pni-li-8jD" id="gk8-O5-p73"/>
+                        <segue destination="pcX-u5-8Eo" kind="modal" identifier="pushview" id="CWs-ys-toi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6f-6c-7Li" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,12 +236,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.69180082070000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="  Please Select a Country              >">
+                                <state key="normal" title="  Please Select a Country              &gt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mobile No" minimumFontSize="17" id="vRp-cc-Vb0">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mobile No" minimumFontSize="17" id="vRp-cc-Vb0">
                                 <rect key="frame" x="86" y="224" width="218" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.91983632380000002" blue="0.90627613060000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -281,7 +295,8 @@
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.050000000000000003" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="dPL-8p-UfZ">
                                 <rect key="frame" x="10" y="181" width="294" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="SOg-vO-D39" id="ifS-ic-ADB"/>
@@ -507,7 +522,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Mobile No" minimumFontSize="17" clearButtonMode="always" id="kqt-TX-dxN">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Mobile No" minimumFontSize="17" clearButtonMode="always" id="kqt-TX-dxN">
                                         <rect key="frame" x="50" y="147" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91983632380000002" blue="0.90627613060000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -533,7 +548,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91171492127628551" blue="0.90242839202795255" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Select Country   >">
+                                        <state key="normal" title="Select Country   &gt;">
                                             <color key="titleColor" red="0.88869160353535348" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -604,7 +619,6 @@ Social reviews and questions - Combining the provisions of our social network , 
                         <outlet property="txt_Password" destination="GYd-VX-QaX" id="2Mt-fq-lDJ"/>
                         <outlet property="txt_UserName" destination="NUC-6p-c7P" id="YPp-gs-jhx"/>
                         <outlet property="txt_selectCountry" destination="5mg-fo-6Zz" id="I06-J8-C8G"/>
-                        <segue destination="pcX-u5-8Eo" kind="modal" identifier="pushview" id="8nD-rT-IwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRR-dn-o2O" sceneMemberID="firstResponder"/>

@@ -398,7 +398,9 @@
         
         ProfileViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
         
-        obj.strMobileNumber=[NSString stringWithFormat:@"%@ %@",_txtCountryCode.text,_txtMobieNumber.text];
+        obj.strMobileNumber=_txtMobieNumber.text;
+        obj.strCountryCode=_txtCountryCode.text;
+        obj.strCountryName=_txt_SelectCountry.text;
         
         [self presentViewController:obj animated:YES completion:nil];
     
@@ -427,6 +429,7 @@
         _txtCountryCode.text=Temp;
         [_btnSelectCountry.titleLabel setTextAlignment:NSTextAlignmentCenter];
         [_btnSelectCountry setTitle:[NSString stringWithFormat:@"%@",[temparr objectAtIndex:0]] forState:UIControlStateNormal];
+        _txt_SelectCountry.text=[temparr objectAtIndex:0];
         
         
     }

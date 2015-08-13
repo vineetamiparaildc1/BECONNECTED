@@ -308,7 +308,12 @@
     
     if([savedValue isEqualToString:@"NewUser"])
     {
-        _lblMobileNumber.text=_strMobileNumber;
+        _lblMobileNumber.text=[NSString stringWithFormat:@"%@ %@",_strCountryCode,_strMobileNumber];
+        
+        _txt_selectCountry.text=_strCountryName;
+        _txtMobileNum.text=_strMobileNumber;
+        
+        
         _lblMobileNumber.hidden=FALSE;
         _btn_SelectCountry.hidden=TRUE;
         _txt_selectCountry.hidden=TRUE;
@@ -355,7 +360,6 @@
 - (IBAction)UpdateButtonClicked:(id)sender
 {
         
-    // [self performSegueWithIdentifier:@"pushview" sender:nil];
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Required Field" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
     if([_txt_selectCountry.text isEqualToString:@" "] || _txt_selectCountry.text.length == 0)
@@ -414,10 +418,23 @@
         
         
         
+        NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginProfile"];
         
-        [user setObject:[temparr objectAtIndex:0] forKey:@"countryname"];
-        [user setObject:Temp forKey:@"countrycode"];
-        [user setObject:_txtMobileNum.text forKey:@"mobileno"];
+        
+        if([savedValue isEqualToString:@"New User"])
+        {
+            [user setObject:_txt_selectCountry.text forKey:@"countryname"];
+            [user setObject:_strCountryCode forKey:@"countrycode"];
+            [user setObject:_txtMobileNum.text forKey:@"mobileno"];
+            
+        }
+        else
+        {
+            [user setObject:[temparr objectAtIndex:0] forKey:@"countryname"];
+            [user setObject:Temp forKey:@"countrycode"];
+            [user setObject:_txtMobileNum.text forKey:@"mobileno"];
+        }
+        
         [user setObject:_txtFullName.text forKey:@"fullname"];
         [user setObject:_txtStatus.text forKey:@"status"];
         
@@ -430,7 +447,11 @@
             [user setObject:@"Female" forKey:@"gender"];
         }
         
-        
+        UIImage *image = _btnProfilePic.imageView.image;
+        NSData *imageData = UIImageJPEGRepresentation(image,1.0);
+        PFFile *imageFile = [PFFile fileWithName:@"ProfilePic" data:imageData];
+        [user setObject:imageFile forKey:@"profilepic"];
+
         
         [user signUpInBackgroundWithBlock:^(BOOL success,NSError *error)
          {
@@ -438,6 +459,7 @@
              {
                  NSLog(@"User Saved");
                  {
+                     {
                      //Getting FBImageUrl From Dictionary Results
                      //                             NSMutableDictionary *DicFbImageUrl = result;
                      //                             DicFbImageUrl = [DicFbImageUrl objectForKey:@"picture"];
@@ -457,7 +479,9 @@
                      //                             NSArray *temparr = [StrFbImageUrl componentsSeparatedByString:@"/"];
                      //                             StrFbImageUrl = [temparr lastObject];
                      //                             temparr = [StrFbImageUrl componentsSeparatedByString:@"?"];
+                     }
                      
+                     /*
                      UIImage *image = _btnProfilePic.imageView.image;
                      NSData *imageData = UIImageJPEGRepresentation(image,1.0);
                      PFFile *imageFile = [PFFile fileWithName:@"ProfilePic" data:imageData];
@@ -475,7 +499,7 @@
                               
                           }
                       }];
-                     
+                     */
                      
                      
                  }
