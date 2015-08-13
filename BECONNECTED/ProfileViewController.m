@@ -306,6 +306,25 @@
         [self getTWInfo];
     }
     
+    if([savedValue isEqualToString:@"NewUser"])
+    {
+        _lblMobileNumber.text=_strMobileNumber;
+        _lblMobileNumber.hidden=FALSE;
+        _btn_SelectCountry.hidden=TRUE;
+        _txt_selectCountry.hidden=TRUE;
+        _txtMobileNum.hidden=TRUE;
+        
+    }
+    else
+    {
+        
+        _lblMobileNumber.hidden=TRUE;
+        _btn_SelectCountry.hidden=FALSE;
+        _txt_selectCountry.hidden=FALSE;
+        _txtMobileNum.hidden=FALSE;
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -316,8 +335,21 @@
 
 - (IBAction)btn_backClicked:(id)sender
 {
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+   /* NSString *savedValue = [[NSUserDefaults standardUserDefaults]
+                            stringForKey:@"LoginProfile"];
+    
+    
+    if([savedValue isEqualToString:@"Facebook"] || [savedValue isEqualToString:@"Facebook"])
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    if ([savedValue isEqualToString:@"NewUser"]) {
+        
+        
+    }
+    */
+    [[NSUserDefaults standardUserDefaults] setObject:@" " forKey:@"LoginProfile"];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)UpdateButtonClicked:(id)sender
@@ -438,8 +470,8 @@
                       {
                           if (!error)
                           {
-                              //                                      ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-                              //                                      [self presentViewController:obj animated:YES completion:nil];
+                              ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+                            [self presentViewController:obj animated:YES completion:nil];
                               
                           }
                       }];

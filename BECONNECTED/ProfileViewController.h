@@ -34,5 +34,10 @@
 
 @property (weak, nonatomic) IBOutlet UIView *pickerView;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblMobileNumber;
+
+@property (strong, nonatomic)  NSString *strMobileNumber;
+
+
 - (IBAction)btnProfilePicClicked:(id)sender;
 @end

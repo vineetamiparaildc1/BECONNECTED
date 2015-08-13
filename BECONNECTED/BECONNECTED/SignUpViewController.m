@@ -394,30 +394,13 @@
     if (buttonIndex == 0 && x==1)
     {
         x=0;
-        PFUser *user=[PFUser user];
-        user.username = @"b";
-        user.email = @"vineeet.amipara.ildc@gmail.com";
-        user.password=@"b";
-        
-        
-        [user setObject:[NSString stringWithFormat:@"%@",_txtCountryCode.text] forKey:@"countrycode"];
-        [user setObject:[NSString stringWithFormat:@"%@",_txtMobieNumber.text] forKey:@"mobileno"];
-        [user setObject:[NSString stringWithFormat:@"%@",_btnSelectCountry.titleLabel.text] forKey:@"countryname"];
-        
-        
-        [user signUpInBackgroundWithBlock:^(BOOL success,NSError *error){
-            if (success) {
-                NSLog(@"User Saved");
-                
-                
-            }
-        }];
-        
+        [[NSUserDefaults standardUserDefaults] setObject:@"NewUser" forKey:@"LoginProfile"];
         
         ProfileViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
-        [self presentViewController:obj animated:YES completion:nil];
-
         
+        obj.strMobileNumber=[NSString stringWithFormat:@"%@ %@",_txtCountryCode.text,_txtMobieNumber.text];
+        
+        [self presentViewController:obj animated:YES completion:nil];
     
     }
     if (buttonIndex == 1)
@@ -428,15 +411,10 @@
 }
 
 
-- (IBAction)btnDoneClicked:(id)sender
+- (IBAction)btnDoneClicked:(UITextField*)sender
 {
     
     _pickerView.hidden=TRUE;
-    
-    if ((_txtMobieNumber.keyboardType=UIKeyboardTypePhonePad))
-    {
-        
-    }
     
     if ((_txt_SelectCountry.inputView=singlePicker))
     {
@@ -453,6 +431,18 @@
         
     }
     
+//    if ((_txtMobieNumber.keyboardType=UIKeyboardTypePhonePad))
+//    {
+//        
+//        if (_txtMobieNumber.text.length < 10)
+//        {
+//            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Dear User" message:@"Please Enter Valid Mobile Number" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//            [alert show];
+//        }
+//    }
+    
+    
+
     [_txt_SelectCountry resignFirstResponder];
     [_txtMobieNumber resignFirstResponder];
 
@@ -461,6 +451,7 @@
 
 - (IBAction)btnVeficationDoneClicked:(id)sender
 {
+    
     _numpadViewVeriyCode.hidden=TRUE;
     _pickerView.hidden=TRUE;
     [_txtVerifyCode resignFirstResponder];
