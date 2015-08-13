@@ -29,6 +29,7 @@
 		A98132561B74AD500053042C /* man-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = A98132541B74AD500053042C /* man-profile.png */; };
 		A9854D171B70BC0600A5142D /* cancel-png.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A9854D161B70BC0600A5142D /* cancel-png.jpeg */; };
 		A9854D191B70DBF800A5142D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9854D181B70DBF800A5142D /* MessageUI.framework */; };
+		A9A59E101B7CA0D20007CD7E /* FriendDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A59E0F1B7CA0D20007CD7E /* FriendDetailsViewController.m */; };
 		A9E821CF1B6B8C9D004D5CD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9E821CE1B6B8C9D004D5CD6 /* GoogleService-Info.plist */; };
 		A9E821D31B6B957B004D5CD6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E821D01B6B957B004D5CD6 /* FBSDKCoreKit.framework */; };
 		A9E821D41B6B957B004D5CD6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E821D11B6B957B004D5CD6 /* FBSDKLoginKit.framework */; };
@@ -84,6 +85,8 @@
 		A98132541B74AD500053042C /* man-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man-profile.png"; sourceTree = "<group>"; };
 		A9854D161B70BC0600A5142D /* cancel-png.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cancel-png.jpeg"; sourceTree = "<group>"; };
 		A9854D181B70DBF800A5142D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A9A59E0E1B7CA0D20007CD7E /* FriendDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendDetailsViewController.h; path = ../FriendDetailsViewController.h; sourceTree = "<group>"; };
+		A9A59E0F1B7CA0D20007CD7E /* FriendDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendDetailsViewController.m; path = ../FriendDetailsViewController.m; sourceTree = "<group>"; };
 		A9E821CE1B6B8C9D004D5CD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9E821D01B6B957B004D5CD6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A9E821D11B6B957B004D5CD6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				A92564211B79F220001A57E4 /* NotificationsViewController.m */,
 				A92564231B7A0648001A57E4 /* FriendsViewController.h */,
 				A92564241B7A0648001A57E4 /* FriendsViewController.m */,
+				A9A59E0E1B7CA0D20007CD7E /* FriendDetailsViewController.h */,
+				A9A59E0F1B7CA0D20007CD7E /* FriendDetailsViewController.m */,
 				A92564291B7A06FA001A57E4 /* ChatRoomViewController.h */,
 				A925642A1B7A06FA001A57E4 /* ChatRoomViewController.m */,
 				A92564261B7A0674001A57E4 /* NearByMapViewController.h */,
@@ -386,6 +391,7 @@
 				A960849C1B6A4ECE00ADD133 /* main.m in Sources */,
 				A904D4911B7388D7000CFB81 /* ProfileViewController.m in Sources */,
 				A925642B1B7A06FA001A57E4 /* ChatRoomViewController.m in Sources */,
+				A9A59E101B7CA0D20007CD7E /* FriendDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +520,7 @@
 			baseConfigurationReference = 0DE28AF5AA768C9E7B685495 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BECONNECTED",
@@ -597,6 +604,8 @@
 					"\"Social\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BECONNECTED-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -605,6 +614,7 @@
 			baseConfigurationReference = 2CF07A85877E8714C8A20EB6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BECONNECTED",
@@ -688,6 +698,7 @@
 					"\"Social\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BECONNECTED-Bridging-Header.h";
 			};
 			name = Release;
 		};

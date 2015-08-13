@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse.h>
 
-@interface FriendsViewController : UIViewController
+
+@interface FriendsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tblViewFriends;
 
 @end
