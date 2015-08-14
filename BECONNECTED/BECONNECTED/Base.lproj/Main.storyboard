@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -62,7 +62,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or Continue Login Using" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dXp-iG-5Ug">
-                                        <rect key="frame" x="66" y="425" width="189" height="16"/>
+                                        <rect key="frame" x="66" y="424" width="189" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.72271543559999996" green="0.0" blue="0.0072643885880000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -197,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xC-yA-o1D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901" y="-122"/>
+            <point key="canvasLocation" x="591" y="-122"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="uib-Ce-9M3">
@@ -414,6 +414,24 @@ Social reviews and questions - Combining the provisions of our social network , 
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" id="sgn-YZ-cLX">
+                                <rect key="frame" x="0.0" y="320" width="320" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AeX-TG-taY">
+                                        <rect key="frame" x="271" y="2" width="37" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.69057765149999994" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDoneClicked:" destination="ZN6-bY-vYO" eventType="touchUpInside" id="B38-oA-NGl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="NY1-OY-DQe">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,11 +441,16 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_information.png" id="BQ1-bn-jOr">
+                                        <rect key="frame" x="50" y="105" width="105" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234567890123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y2u-Mp-IPH">
-                                        <rect key="frame" x="50" y="77" width="101" height="21"/>
+                                        <rect key="frame" x="50" y="117" width="101" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.80539772730000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.96431107959999995" green="0.66130379602161993" blue="0.56530073379510237" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please Enter Full Name" minimumFontSize="17" id="rbf-Vl-9NC">
@@ -544,7 +567,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nDh-Jp-yuT">
-                                        <rect key="frame" x="50" y="103" width="101" height="30"/>
+                                        <rect key="frame" x="50" y="112" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.91171492127628551" blue="0.90242839202795255" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -554,7 +577,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         </state>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" alpha="0.050000000000000003" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="5mg-fo-6Zz">
-                                        <rect key="frame" x="50" y="103" width="101" height="30"/>
+                                        <rect key="frame" x="50" y="112" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
@@ -581,26 +604,15 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         <color key="textColor" red="0.5" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YYN-Mq-B4z">
+                                        <rect key="frame" x="50" y="88" width="106" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.80539772730000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </scrollView>
-                            <view hidden="YES" contentMode="scaleToFill" id="sgn-YZ-cLX">
-                                <rect key="frame" x="0.0" y="320" width="320" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AeX-TG-taY">
-                                        <rect key="frame" x="271" y="2" width="37" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Done">
-                                            <color key="titleColor" red="0.69057765149999994" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnDoneClicked:" destination="ZN6-bY-vYO" eventType="touchUpInside" id="B38-oA-NGl"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -640,12 +652,12 @@ Social reviews and questions - Combining the provisions of our social network , 
                                 <color key="textColor" red="0.5" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Kp-rj-NRh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Kp-rj-NRh">
                                 <rect key="frame" x="-2" y="59" width="325" height="459"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellOne" rowHeight="65" id="XkP-cL-3ZM">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellOne" rowHeight="50" id="XkP-cL-3ZM">
                                         <rect key="frame" x="0.0" y="22" width="325" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XkP-cL-3ZM" id="DZ1-VO-nXt">
@@ -653,20 +665,20 @@ Social reviews and questions - Combining the provisions of our social network , 
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="lbU-xK-o9G">
-                                                    <rect key="frame" x="8" y="4" width="79" height="56"/>
+                                                    <rect key="frame" x="10" y="5" width="36" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="201" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xmX-SI-xkE">
-                                                    <rect key="frame" x="106" y="9" width="131" height="21"/>
+                                                    <rect key="frame" x="57" y="5" width="210" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cxq-ap-zfQ">
-                                                    <rect key="frame" x="106" y="32" width="131" height="21"/>
+                                                    <rect key="frame" x="57" y="25" width="210" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -689,7 +701,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWg-hh-bvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285" y="590"/>
+            <point key="canvasLocation" x="-287" y="510"/>
         </scene>
         <!--Chats-->
         <scene sceneID="Y1w-pC-U8h">
@@ -735,7 +747,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NU4-bs-8bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-710" y="1293"/>
+            <point key="canvasLocation" x="64" y="504"/>
         </scene>
         <!--Setting-->
         <scene sceneID="0E5-hU-9YX">
@@ -901,7 +913,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sub-gk-yYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-326" y="1293"/>
+            <point key="canvasLocation" x="424" y="504"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="B9i-8r-YhZ">
@@ -926,7 +938,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6i-BZ-tni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1102" y="590"/>
+            <point key="canvasLocation" x="-1002" y="504"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="rzI-9n-6Bs">
@@ -942,7 +954,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36T-cp-lpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-718" y="598"/>
+            <point key="canvasLocation" x="-648" y="504"/>
         </scene>
         <!--Friend Details View Controller-->
         <scene sceneID="ggl-NY-Vz6">

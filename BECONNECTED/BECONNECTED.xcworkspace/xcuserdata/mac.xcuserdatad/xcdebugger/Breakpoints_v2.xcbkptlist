@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProfileViewController.m"
-            timestampString = "461141881.753283"
+            timestampString = "461223988.5107"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "688"
-            endingLineNumber = "688"
-            landmarkName = "-getTWInfo"
+            startingLineNumber = "690"
+            endingLineNumber = "690"
+            landmarkName = "-getFbInfo"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProfileViewController.m"
-            timestampString = "461141893.536948"
+            timestampString = "461223988.5107"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProfileViewController.m"
-            timestampString = "461141969.290948"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "696"
-            endingLineNumber = "696"
-            landmarkName = "-getTWInfo"
+            startingLineNumber = "698"
+            endingLineNumber = "698"
+            landmarkName = "-getFbInfo"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

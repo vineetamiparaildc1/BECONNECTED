@@ -13,6 +13,7 @@
 #import "SignUpViewController.h"
 #import <MessageUI/MessageUI.h>
 #import "ProfileViewController.h"
+#import "NotificationsViewController.h"
 #import <Parse.h>
 
 @interface ViewController ()
@@ -25,6 +26,21 @@
 {
     [super viewDidLoad];
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginUserID"];
+    
+    if(savedValue.length>5)
+    {
+        //NotificationsViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"NotificationsViewController"];
+        //[self presentViewController:obj animated:YES completion:nil];
+            [self performSegueWithIdentifier:@"pushview" sender:nil];
+
+    }
+   
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -108,7 +124,7 @@
                                         }
                                         else
                                         {
-                                            
+                                            _txtPassword.text=@"";
                                             UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"Please Enter Valid User and Password" message:@"Seems Like Username and Password Don't Match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                             [alert show];
                                         }

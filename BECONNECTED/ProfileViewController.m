@@ -408,12 +408,7 @@
         user.email =  _txtEmailID.text;
         
         
-        NSString *Temp = _txt_selectCountry.text;
-        NSArray *temparr = [Temp componentsSeparatedByString:@"+"];
-        NSLog(@"%@",temparr);
         
-        Temp = [NSString stringWithFormat:@"+%@",[temparr objectAtIndex:1]];
-        NSLog(@"%@",Temp);
         
         
         
@@ -421,7 +416,7 @@
         NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginProfile"];
         
         
-        if([savedValue isEqualToString:@"New User"])
+        if([savedValue isEqualToString:@"NewUser"])
         {
             [user setObject:_txt_selectCountry.text forKey:@"countryname"];
             [user setObject:_strCountryCode forKey:@"countrycode"];
@@ -430,6 +425,12 @@
         }
         else
         {
+            NSString *Temp = _txt_selectCountry.text;
+            NSArray *temparr = [Temp componentsSeparatedByString:@"+"];
+            NSLog(@"%@",temparr);
+    
+            Temp = [NSString stringWithFormat:@"+%@",[temparr objectAtIndex:1]];
+            NSLog(@"%@",Temp);
             [user setObject:[temparr objectAtIndex:0] forKey:@"countryname"];
             [user setObject:Temp forKey:@"countrycode"];
             [user setObject:_txtMobileNum.text forKey:@"mobileno"];
@@ -458,7 +459,7 @@
              if (success)
              {
                  NSLog(@"User Saved");
-                 {
+                 
                      {
                      //Getting FBImageUrl From Dictionary Results
                      //                             NSMutableDictionary *DicFbImageUrl = result;
@@ -479,7 +480,7 @@
                      //                             NSArray *temparr = [StrFbImageUrl componentsSeparatedByString:@"/"];
                      //                             StrFbImageUrl = [temparr lastObject];
                      //                             temparr = [StrFbImageUrl componentsSeparatedByString:@"?"];
-                     }
+                     
                      
                      /*
                      UIImage *image = _btnProfilePic.imageView.image;
@@ -494,15 +495,16 @@
                       {
                           if (!error)
                           {
-                              ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-                            [self presentViewController:obj animated:YES completion:nil];
+                      
                               
                           }
                       }];
                      */
                      
+                     }
                      
-                 }
+                     ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+                     [self presentViewController:obj animated:YES completion:nil];
                  
              }
              else

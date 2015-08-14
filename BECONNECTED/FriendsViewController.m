@@ -63,6 +63,9 @@
     [cell addSubview:addFriendButton];
     [addFriendButton addTarget:self action:@selector(yourButtonClicked:) forControlEvents:UIControlEventTouchUpInside];    addFriendButton.tag = indexPath.row;
     
+    
+    
+    
     //cell.addFriendButton.tag = indexPath.row;
     //cell.textLabel.text =
     
@@ -81,6 +84,8 @@
             
             UIImageView *imgView = (UIImageView*)[cell viewWithTag:200];
             imgView.image = image;
+            imgView.layer.cornerRadius = imgView.frame.size.width / 2;
+            imgView.clipsToBounds = YES;
             
         }
     }];
