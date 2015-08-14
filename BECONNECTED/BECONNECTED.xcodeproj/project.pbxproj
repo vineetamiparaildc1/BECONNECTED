@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A904D4911B7388D7000CFB81 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A904D4901B7388D7000CFB81 /* ProfileViewController.m */; };
+		A91F809B1B7DF579000C16C1 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = A91F80991B7DF579000C16C1 /* chat.png */; };
+		A91F809C1B7DF579000C16C1 /* loation.png in Resources */ = {isa = PBXBuildFile; fileRef = A91F809A1B7DF579000C16C1 /* loation.png */; };
+		A91F809E1B7DF57D000C16C1 /* call.png in Resources */ = {isa = PBXBuildFile; fileRef = A91F809D1B7DF57D000C16C1 /* call.png */; };
+		A91F80A31B7DFE93000C16C1 /* RequestSent.png in Resources */ = {isa = PBXBuildFile; fileRef = A91F80A01B7DFE93000C16C1 /* RequestSent.png */; };
+		A91F80A41B7DFE93000C16C1 /* Friends.png in Resources */ = {isa = PBXBuildFile; fileRef = A91F80A11B7DFE93000C16C1 /* Friends.png */; };
+		A91F80A61B7DFEF0000C16C1 /* AddFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = A91F80A51B7DFEF0000C16C1 /* AddFriend.png */; };
 		A925641F1B79F194001A57E4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A925641E1B79F194001A57E4 /* SettingsViewController.m */; };
 		A92564221B79F220001A57E4 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92564211B79F220001A57E4 /* NotificationsViewController.m */; };
 		A92564251B7A0648001A57E4 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92564241B7A0648001A57E4 /* FriendsViewController.m */; };
@@ -51,6 +57,12 @@
 		2CF07A85877E8714C8A20EB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A904D48F1B7388D7000CFB81 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
 		A904D4901B7388D7000CFB81 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
+		A91F80991B7DF579000C16C1 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
+		A91F809A1B7DF579000C16C1 /* loation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loation.png; sourceTree = "<group>"; };
+		A91F809D1B7DF57D000C16C1 /* call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call.png; sourceTree = "<group>"; };
+		A91F80A01B7DFE93000C16C1 /* RequestSent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RequestSent.png; sourceTree = "<group>"; };
+		A91F80A11B7DFE93000C16C1 /* Friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Friends.png; sourceTree = "<group>"; };
+		A91F80A51B7DFEF0000C16C1 /* AddFriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddFriend.png; sourceTree = "<group>"; };
 		A925641D1B79F194001A57E4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../SettingsViewController.h; sourceTree = "<group>"; };
 		A925641E1B79F194001A57E4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
 		A92564201B79F220001A57E4 /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationsViewController.h; path = ../NotificationsViewController.h; sourceTree = "<group>"; };
@@ -138,12 +150,18 @@
 		A960848D1B6A4ECE00ADD133 = {
 			isa = PBXGroup;
 			children = (
+				A91F80991B7DF579000C16C1 /* chat.png */,
+				A91F809A1B7DF579000C16C1 /* loation.png */,
 				A98132531B74AD500053042C /* women-profile.png */,
 				A98132541B74AD500053042C /* man-profile.png */,
 				A94D72F51B7B444300441425 /* back.jpeg */,
+				A91F80A51B7DFEF0000C16C1 /* AddFriend.png */,
+				A91F80A01B7DFE93000C16C1 /* RequestSent.png */,
+				A91F80A11B7DFE93000C16C1 /* Friends.png */,
 				A96A0B871B6F83EB00794031 /* belogo.jpg */,
 				A9854D161B70BC0600A5142D /* cancel-png.jpeg */,
 				A96A0B881B6F83EB00794031 /* btn_information.png */,
+				A91F809D1B7DF57D000C16C1 /* call.png */,
 				A96084981B6A4ECE00ADD133 /* BECONNECTED */,
 				A96084B21B6A4ECE00ADD133 /* BECONNECTEDTests */,
 				A96084971B6A4ECE00ADD133 /* Products */,
@@ -305,14 +323,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A98132561B74AD500053042C /* man-profile.png in Resources */,
+				A91F80A61B7DFEF0000C16C1 /* AddFriend.png in Resources */,
+				A91F809B1B7DF579000C16C1 /* chat.png in Resources */,
 				A98132551B74AD500053042C /* women-profile.png in Resources */,
 				A9E821CF1B6B8C9D004D5CD6 /* GoogleService-Info.plist in Resources */,
 				A96084A51B6A4ECE00ADD133 /* Main.storyboard in Resources */,
 				A9854D171B70BC0600A5142D /* cancel-png.jpeg in Resources */,
+				A91F809C1B7DF579000C16C1 /* loation.png in Resources */,
 				A96A0B891B6F83EB00794031 /* belogo.jpg in Resources */,
 				A96084A71B6A4ECE00ADD133 /* Images.xcassets in Resources */,
 				A94D72F61B7B444300441425 /* back.jpeg in Resources */,
 				A96A0B8A1B6F83EB00794031 /* btn_information.png in Resources */,
+				A91F80A41B7DFE93000C16C1 /* Friends.png in Resources */,
+				A91F809E1B7DF57D000C16C1 /* call.png in Resources */,
+				A91F80A31B7DFE93000C16C1 /* RequestSent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

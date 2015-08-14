@@ -12,7 +12,9 @@
 @interface FriendsViewController (){
     
     NSArray *aArray;
-    NSDictionary *aDict;
+    PFObject *objPF;
+    NSArray *arrobjFriends;
+    
 }
 
 @end
@@ -22,19 +24,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             aArray = [[NSArray alloc]initWithArray:objects];
-            
             [_tblViewFriends reloadData];
+            
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
     
+    
+//    PFQuery *query1 = [PFQuery queryWithClassName:@"Friends"];
+//    [query1 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error)
+//        {
+//            arrobjFriends = [[NSArray alloc]initWithArray:objects];
+//        }
+//        else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
+    
+    
     // Do any additional setup after loading the view.
+}
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,30 +75,59 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellOne"];
     
-    // add friend button
-    UIButton *addFriendButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    addFriendButton.frame = CGRectMake(255.0f, 15.0f, 62.0f, 34.0f);
-    [addFriendButton setImage:[UIImage imageNamed:@"friend.png"] forState:UIControlStateNormal];
-    
-    //   [addFriendButton setTitle:@"+Friend" forState:UIControlStateNormal];
-    [addFriendButton setImage:[UIImage imageNamed:@"man-profile.png"] forState:UIControlStateSelected];
-    
-    [cell addSubview:addFriendButton];
-    [addFriendButton addTarget:self action:@selector(yourButtonClicked:) forControlEvents:UIControlEventTouchUpInside];    addFriendButton.tag = indexPath.row;
     
     
+    _btnAddFriend = [UIButton buttonWithType:UIButtonTypeCustom];
+    for (int i=0; i<aArray.count; i++)
+    {
+        int y=5;
+        _btnAddFriend.frame = CGRectMake(220, y, 110, 35);
+        y=y+50;
+    }
+    
+    //[cell.contentView addSubview:_btnAddFriend];
+    _btnAddFriend.tag = indexPath.row + 1;
+    
+    for (int i=0; i<arrobjFriends.count; i++)
+    {
+        
+        NSString *Temp=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqstatus"];
+        NSString *Temp1=[[arrobjFriends objectAtIndex:i] objectForKey:@"isfriend"];
+        
+        if ([Temp isEqualToString:@"requestsent"])
+        {
+            [_btnAddFriend setImage:[UIImage imageNamed:@"RequestSent.png"] forState:UIControlStateNormal];
+            [cell.contentView addSubview:_btnAddFriend];
+            [[NSUserDefaults standardUserDefaults] setObject:@"addfriend" forKey:@"RequestDetail"];
+            
+        }
+         if([Temp isEqualToString:@"addfriend"])
+        {
+            [_btnAddFriend setImage:[UIImage imageNamed:@"AddFriend.png"] forState:UIControlStateNormal];
+             [cell.contentView addSubview:_btnAddFriend];
+            [[NSUserDefaults standardUserDefaults] setObject:@"requestsent" forKey:@"RequestDetail"];
+         
+        }
+//         if ([Temp1 isEqualToString:@"true"])
+//        {
+//            [_btnAddFriend setImage:[UIImage imageNamed:@"Friends.png"] forState:UIControlStateNormal];
+//            [cell.contentView addSubview:_btnAddFriend];
+//        }
+        
+    }
+        
+            
+        
+        
+    [_btnAddFriend addTarget:self action:@selector(TableBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+            
+        
     
     
-    //cell.addFriendButton.tag = indexPath.row;
-    //cell.textLabel.text =
+
+    objPF = [aArray objectAtIndex:indexPath.row];
     
-    
-    
-    aDict = [aArray objectAtIndex:indexPath.row];
-    
-    
-    PFFile *imageFile = [aDict objectForKey:@"profilepic"];
+    PFFile *imageFile = [objPF objectForKey:@"profilepic"];
     NSLog(@"imageURL= %@",imageFile.url);
     
     [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
@@ -89,33 +142,78 @@
             
         }
     }];
+
     
     UILabel *lblTitle = (UILabel*)[cell viewWithTag:201];
-    lblTitle.text =  [aDict objectForKey:@"fullname"];
+    lblTitle.text =  [objPF objectForKey:@"fullname"];
     
     UILabel *lblTitle1 = (UILabel*)[cell viewWithTag:202];
-    lblTitle1.text =  [aDict objectForKey:@"status"];
+    lblTitle1.text =  [objPF objectForKey:@"status"];
     
     return cell;
-}
--(void)yourButtonClicked:(UIButton*)sender{
-   // NSLog(@"Tag= %ld",(long)sender.tag);
     
+    
+}
+
+-(void)TableBtnClicked:(UIButton*)sender
+{
+    objPF = [aArray objectAtIndex:sender.tag-1];
+    NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginUserID"];
+    NSString *savedValue2 = [[NSUserDefaults standardUserDefaults] stringForKey:@"RequestDetail"];
+    PFObject *gameScore = [PFObject objectWithClassName:@"Friends"];
+    [gameScore setObject:savedValue forKey:@"userid"];
+    [gameScore setObject:objPF.objectId forKey:@"friendid"];
+    
+    
+    [gameScore setObject:[NSNumber numberWithBool:NO] forKey:@"isfriend"];
+    
+    
+    [gameScore setObject:savedValue2 forKey:@"reqstatus"];
+    
+    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded)
+        {
+            [_tblViewFriends reloadData];
+        }
+        else
+        {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    
+    
+}
+- (IBAction)btnclicked:(id)sender
+{
+    PFQuery *query1 = [PFQuery queryWithClassName:@"Friends"];
+    [query1 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error)
+        {
+            arrobjFriends = [[NSArray alloc]initWithArray:objects];
+            [_tblViewFriends reloadData];
+        }
+        else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
 }
 
 //Table view delegates
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    aDict = [aArray objectAtIndex:indexPath.row];
+    objPF = [aArray objectAtIndex:indexPath.row];
     
     FriendDetailsViewController *obj = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendDetailsViewController"];
-    obj.Mobileno= [aDict objectForKey:@"mobileno"];
-    obj.Fullname = [aDict objectForKey:@"fullname"];
-    obj.Username= [aDict objectForKey:@"username"];
-    obj.Status= [aDict objectForKey:@"status"];
-    obj.Email= [aDict objectForKey:@"email"];
-    obj.Gender= [aDict objectForKey:@"gender"];
-    PFFile *imageFile = [aDict objectForKey:@"profilepic"];
+    obj.Mobileno= [objPF objectForKey:@"mobileno"];
+    obj.Fullname = [objPF objectForKey:@"fullname"];
+    obj.Username= [objPF objectForKey:@"username"];
+    obj.Status= [objPF objectForKey:@"status"];
+    obj.Email= [objPF objectForKey:@"email"];
+    obj.Gender= [objPF objectForKey:@"gender"];
+    PFFile *imageFile = [objPF objectForKey:@"profilepic"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
         
         if (!error && imageData) {
@@ -126,4 +224,5 @@
     [self presentViewController:obj animated:YES completion:nil];
     
 }
+
 @end

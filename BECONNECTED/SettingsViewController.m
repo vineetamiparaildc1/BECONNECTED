@@ -59,6 +59,7 @@
         
     }
     [[NSUserDefaults standardUserDefaults] setObject:@" " forKey:@"LoginProfile"];
+    [[NSUserDefaults standardUserDefaults] setObject:@" " forKey:@"LoginUserID"];
     ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
     [self presentViewController:obj animated:YES completion:nil];
     

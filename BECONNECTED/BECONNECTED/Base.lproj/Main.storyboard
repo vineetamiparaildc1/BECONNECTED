@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -658,10 +658,10 @@ Social reviews and questions - Combining the provisions of our social network , 
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellOne" rowHeight="50" id="XkP-cL-3ZM">
-                                        <rect key="frame" x="0.0" y="22" width="325" height="65"/>
+                                        <rect key="frame" x="0.0" y="22" width="325" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XkP-cL-3ZM" id="DZ1-VO-nXt">
-                                            <rect key="frame" x="0.0" y="0.0" width="325" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="lbU-xK-o9G">
@@ -691,6 +691,16 @@ Social reviews and questions - Combining the provisions of our social network , 
                                     <outlet property="delegate" destination="wNQ-VB-YJ4" id="Eob-op-3ea"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DcI-Ga-t4t">
+                                <rect key="frame" x="274" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnclicked:" destination="wNQ-VB-YJ4" eventType="touchUpInside" id="b1n-k1-tfs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1027,7 +1037,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         <color key="textColor" red="0.80539772730000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobiel No" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BLX-Bw-qYt">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile No" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BLX-Bw-qYt">
                                         <rect key="frame" x="18" y="324" width="101" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -1062,6 +1072,16 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         <color key="textColor" red="0.96431107959999995" green="0.64423168090000005" blue="0.56526561880000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nh1-Y7-QiA">
+                                        <rect key="frame" x="280" y="324" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="call.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn_callClicked:" destination="sbR-le-K3U" eventType="touchUpInside" id="X4G-5Y-fYT"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eUj-4G-GLY">
                                         <rect key="frame" x="19" y="439" width="101" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1111,6 +1131,26 @@ Social reviews and questions - Combining the provisions of our social network , 
                                         <color key="textColor" red="0.5" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eZI-ih-x34">
+                                        <rect key="frame" x="240" y="324" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="chat.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn_Chatclicked:" destination="sbR-le-K3U" eventType="touchUpInside" id="exL-pW-DWc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Nek-nG-MMk">
+                                        <rect key="frame" x="200" y="324" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="loation.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn_LocationClicked:" destination="sbR-le-K3U" eventType="touchUpInside" id="3uQ-wq-UD2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -1138,7 +1178,10 @@ Social reviews and questions - Combining the provisions of our social network , 
         <image name="back.jpeg" width="258" height="196"/>
         <image name="belogo.jpg" width="1080" height="455"/>
         <image name="btn_information.png" width="48" height="48"/>
+        <image name="call.png" width="244" height="207"/>
         <image name="cancel-png.jpeg" width="225" height="225"/>
+        <image name="chat.png" width="183" height="166"/>
+        <image name="loation.png" width="73" height="73"/>
         <image name="man-profile.png" width="343" height="344"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

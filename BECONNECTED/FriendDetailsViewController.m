@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.scrViewFriendDetails.contentSize = CGSizeMake(self.scrViewFriendDetails.frame.size.width, 820);
+    self.scrViewFriendDetails.contentSize = CGSizeMake(self.scrViewFriendDetails.frame.size.width, 568);
     
     _lblMobileno.text = _Mobileno;
     _lblFullName.text = _Fullname;
@@ -47,4 +47,23 @@
                              completion:nil];
     
 }
+
+- (IBAction)btn_Chatclicked:(id)sender {
+}
+
+- (IBAction)btn_callClicked:(id)sender
+{
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_lblMobileno.text]];
+}
+
+
+
+- (IBAction)btn_LocationClicked:(id)sender {
+}
+
+
+
+
+
 @end
