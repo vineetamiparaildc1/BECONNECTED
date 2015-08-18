@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblFullName;
 @property (weak, nonatomic) IBOutlet UILabel *lblUsername;
 @property (weak, nonatomic) IBOutlet UILabel *lblMobileno;
+
 @property (weak, nonatomic) IBOutlet UILabel *lblStatus;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmail;
 @property (weak, nonatomic) IBOutlet UILabel *lblGender;

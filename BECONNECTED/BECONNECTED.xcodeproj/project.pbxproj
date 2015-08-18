@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1421807C1B8301AB001BEC39 /* ChatDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421807B1B8301AB001BEC39 /* ChatDetailsViewController.m */; };
+		1421807E1B830BBE001BEC39 /* insert.png in Resources */ = {isa = PBXBuildFile; fileRef = 1421807D1B830BBE001BEC39 /* insert.png */; };
+		142180831B830D21001BEC39 /* camera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 142180811B830D21001BEC39 /* camera.jpeg */; };
+		142180841B830D21001BEC39 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 142180821B830D21001BEC39 /* mic.png */; };
 		A904D4911B7388D7000CFB81 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A904D4901B7388D7000CFB81 /* ProfileViewController.m */; };
 		A91F809B1B7DF579000C16C1 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = A91F80991B7DF579000C16C1 /* chat.png */; };
 		A91F809C1B7DF579000C16C1 /* loation.png in Resources */ = {isa = PBXBuildFile; fileRef = A91F809A1B7DF579000C16C1 /* loation.png */; };
@@ -54,6 +58,11 @@
 
 /* Begin PBXFileReference section */
 		0DE28AF5AA768C9E7B685495 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1421807A1B8301AA001BEC39 /* ChatDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatDetailsViewController.h; path = ../ChatDetailsViewController.h; sourceTree = "<group>"; };
+		1421807B1B8301AB001BEC39 /* ChatDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatDetailsViewController.m; path = ../ChatDetailsViewController.m; sourceTree = "<group>"; };
+		1421807D1B830BBE001BEC39 /* insert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insert.png; sourceTree = "<group>"; };
+		142180811B830D21001BEC39 /* camera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpeg; sourceTree = "<group>"; };
+		142180821B830D21001BEC39 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
 		2CF07A85877E8714C8A20EB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A904D48F1B7388D7000CFB81 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
 		A904D4901B7388D7000CFB81 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
@@ -150,11 +159,14 @@
 		A960848D1B6A4ECE00ADD133 = {
 			isa = PBXGroup;
 			children = (
+				142180811B830D21001BEC39 /* camera.jpeg */,
+				142180821B830D21001BEC39 /* mic.png */,
 				A91F80991B7DF579000C16C1 /* chat.png */,
 				A91F809A1B7DF579000C16C1 /* loation.png */,
 				A98132531B74AD500053042C /* women-profile.png */,
 				A98132541B74AD500053042C /* man-profile.png */,
 				A94D72F51B7B444300441425 /* back.jpeg */,
+				1421807D1B830BBE001BEC39 /* insert.png */,
 				A91F80A51B7DFEF0000C16C1 /* AddFriend.png */,
 				A91F80A01B7DFE93000C16C1 /* RequestSent.png */,
 				A91F80A11B7DFE93000C16C1 /* Friends.png */,
@@ -201,6 +213,8 @@
 				A9A59E0F1B7CA0D20007CD7E /* FriendDetailsViewController.m */,
 				A92564291B7A06FA001A57E4 /* ChatRoomViewController.h */,
 				A925642A1B7A06FA001A57E4 /* ChatRoomViewController.m */,
+				1421807A1B8301AA001BEC39 /* ChatDetailsViewController.h */,
+				1421807B1B8301AB001BEC39 /* ChatDetailsViewController.m */,
 				A92564261B7A0674001A57E4 /* NearByMapViewController.h */,
 				A92564271B7A0674001A57E4 /* NearByMapViewController.m */,
 				A925641D1B79F194001A57E4 /* SettingsViewController.h */,
@@ -324,11 +338,14 @@
 			files = (
 				A98132561B74AD500053042C /* man-profile.png in Resources */,
 				A91F80A61B7DFEF0000C16C1 /* AddFriend.png in Resources */,
+				1421807E1B830BBE001BEC39 /* insert.png in Resources */,
+				142180831B830D21001BEC39 /* camera.jpeg in Resources */,
 				A91F809B1B7DF579000C16C1 /* chat.png in Resources */,
 				A98132551B74AD500053042C /* women-profile.png in Resources */,
 				A9E821CF1B6B8C9D004D5CD6 /* GoogleService-Info.plist in Resources */,
 				A96084A51B6A4ECE00ADD133 /* Main.storyboard in Resources */,
 				A9854D171B70BC0600A5142D /* cancel-png.jpeg in Resources */,
+				142180841B830D21001BEC39 /* mic.png in Resources */,
 				A91F809C1B7DF579000C16C1 /* loation.png in Resources */,
 				A96A0B891B6F83EB00794031 /* belogo.jpg in Resources */,
 				A96084A71B6A4ECE00ADD133 /* Images.xcassets in Resources */,
@@ -404,6 +421,7 @@
 				A96084A21B6A4ECE00ADD133 /* ViewController.m in Sources */,
 				A92564221B79F220001A57E4 /* NotificationsViewController.m in Sources */,
 				A92564281B7A0674001A57E4 /* NearByMapViewController.m in Sources */,
+				1421807C1B8301AB001BEC39 /* ChatDetailsViewController.m in Sources */,
 				A960849F1B6A4ECE00ADD133 /* AppDelegate.m in Sources */,
 				A96A0B8D1B6F8A4D00794031 /* SignUpViewController.m in Sources */,
 				A92564251B7A0648001A57E4 /* FriendsViewController.m in Sources */,

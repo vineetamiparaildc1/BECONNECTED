@@ -92,7 +92,7 @@
     {
         
         NSString *Temp=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqstatus"];
-        NSString *Temp1=[[arrobjFriends objectAtIndex:i] objectForKey:@"isfriend"];
+        //NSString *Temp1=[[arrobjFriends objectAtIndex:i] objectForKey:@"isfriend"];
         
         if ([Temp isEqualToString:@"requestsent"])
         {
@@ -205,22 +205,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     objPF = [aArray objectAtIndex:indexPath.row];
-    
+    [[NSUserDefaults standardUserDefaults] setObject:[objPF objectId] forKey:@"FriendUserID"];
     FriendDetailsViewController *obj = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendDetailsViewController"];
-    obj.Mobileno= [objPF objectForKey:@"mobileno"];
-    obj.Fullname = [objPF objectForKey:@"fullname"];
-    obj.Username= [objPF objectForKey:@"username"];
-    obj.Status= [objPF objectForKey:@"status"];
-    obj.Email= [objPF objectForKey:@"email"];
-    obj.Gender= [objPF objectForKey:@"gender"];
-    PFFile *imageFile = [objPF objectForKey:@"profilepic"];
-    [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-        
-        if (!error && imageData) {
-            UIImage *image = [[UIImage alloc]initWithData:imageData];
-            [obj.btnProfilePic setImage:image forState:UIControlStateNormal];
-        }
-    }];
     [self presentViewController:obj animated:YES completion:nil];
     
 }

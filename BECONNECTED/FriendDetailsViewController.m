@@ -8,7 +8,7 @@
 
 #import "FriendDetailsViewController.h"
 #import "FriendsViewController.h"
-
+#import "ChatDetailsViewController.h"
 
 @interface FriendDetailsViewController ()
 
@@ -20,16 +20,37 @@
     [super viewDidLoad];
     self.scrViewFriendDetails.contentSize = CGSizeMake(self.scrViewFriendDetails.frame.size.width, 568);
     
-    _lblMobileno.text = _Mobileno;
-    _lblFullName.text = _Fullname;
-    _lblUsername.text = _Username;
-    _lblStatus.text = _Status;
-    _lblEmail.text = _Email;
-    _lblGender.text =_Gender ;
+    NSString *strFriendDetail = [[NSUserDefaults standardUserDefaults]objectForKey:@"FriendUserID"];
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query getObjectInBackgroundWithId:strFriendDetail block:^(PFObject *objDetail, NSError *error)
+     {
+         // Do something with the returned PFObject in the gameScore variable.
+         _lblMobileno.text = [NSString stringWithFormat:@"%@ %@",[objDetail objectForKey:@"countrycode"],[objDetail objectForKey:@"mobileno"]];
+         _lblFullName.text = [objDetail objectForKey:@"fullname"];
+         _lblUsername.text = [objDetail objectForKey:@"username"];
+         _lblStatus.text = [objDetail objectForKey:@"status"];
+         _lblEmail.text = [objDetail objectForKey:@"email"];
+         _lblGender.text =[objDetail objectForKey:@"gender"];
+
+         NSArray *titleArray = [[objDetail objectForKey:@"fullname"] componentsSeparatedByString:@" "];
+         NSString *title = [titleArray firstObject];
+         _lblTitle.text = [NSString stringWithFormat:@"%@'s Info",title];
+         
+         
+         PFFile *imageFile = [objDetail objectForKey:@"profilepic"];
+         [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+             
+             if (!error && imageData) {
+                 UIImage *image = [[UIImage alloc]initWithData:imageData];
+                 [_btnProfilePic setImage:image forState:UIControlStateNormal];
+             }
+         }];
+     }];
     
-    NSArray *titleArray = [_Fullname componentsSeparatedByString:@" "];
-    NSString *title = [titleArray firstObject];
-    _lblTitle.text = [NSString stringWithFormat:@"%@'s Info",title];
+    
+    
+    
+    
     
     // Do any additional setup after loading the view.
 }
@@ -48,7 +69,11 @@
     
 }
 
-- (IBAction)btn_Chatclicked:(id)sender {
+- (IBAction)btn_Chatclicked:(id)sender
+{
+    ChatDetailsViewController *obj = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatDetailsViewController"];
+    [self presentViewController:obj animated:YES completion:nil];
+
 }
 
 - (IBAction)btn_callClicked:(id)sender
