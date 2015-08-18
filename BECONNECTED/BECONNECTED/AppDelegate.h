@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Google/SignIn.h>
+#import <GoogleMaps/GoogleMaps.h>
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

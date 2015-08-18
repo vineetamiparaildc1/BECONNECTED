@@ -19,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtMessagebox;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *ScrollView;
+@property (weak, nonatomic) IBOutlet UIView *txtfieldView;
+
+@property(weak, nonatomic) IBOutlet UITableView *tblview;
 
 @end

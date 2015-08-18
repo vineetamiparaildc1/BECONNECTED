@@ -23,7 +23,6 @@
 		A92564251B7A0648001A57E4 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92564241B7A0648001A57E4 /* FriendsViewController.m */; };
 		A92564281B7A0674001A57E4 /* NearByMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92564271B7A0674001A57E4 /* NearByMapViewController.m */; };
 		A925642B1B7A06FA001A57E4 /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A925642A1B7A06FA001A57E4 /* ChatRoomViewController.m */; };
-		A925642D1B7A079B001A57E4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A925642C1B7A079B001A57E4 /* MapKit.framework */; };
 		A94D72F61B7B444300441425 /* back.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A94D72F51B7B444300441425 /* back.jpeg */; };
 		A960849C1B6A4ECE00ADD133 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A960849B1B6A4ECE00ADD133 /* main.m */; };
 		A960849F1B6A4ECE00ADD133 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A960849E1B6A4ECE00ADD133 /* AppDelegate.m */; };
@@ -82,7 +81,6 @@
 		A92564271B7A0674001A57E4 /* NearByMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NearByMapViewController.m; path = ../NearByMapViewController.m; sourceTree = "<group>"; };
 		A92564291B7A06FA001A57E4 /* ChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatRoomViewController.h; path = ../ChatRoomViewController.h; sourceTree = "<group>"; };
 		A925642A1B7A06FA001A57E4 /* ChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatRoomViewController.m; path = ../ChatRoomViewController.m; sourceTree = "<group>"; };
-		A925642C1B7A079B001A57E4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A94D72F51B7B444300441425 /* back.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpeg; sourceTree = "<group>"; };
 		A96084961B6A4ECE00ADD133 /* BECONNECTED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BECONNECTED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A960849A1B6A4ECE00ADD133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A925642D1B7A079B001A57E4 /* MapKit.framework in Frameworks */,
 				A9854D191B70DBF800A5142D /* MessageUI.framework in Frameworks */,
 				A9E821D51B6B957B004D5CD6 /* FBSDKShareKit.framework in Frameworks */,
 				AADB960753FEA35E2DFF7689 /* libPods.a in Frameworks */,
@@ -149,7 +146,6 @@
 		49B508D2D207D35D7A1DF9C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A925642C1B7A079B001A57E4 /* MapKit.framework */,
 				A9854D181B70DBF800A5142D /* MessageUI.framework */,
 				DD46A315A5120094A9C5ECBA /* libPods.a */,
 			);
@@ -562,34 +558,8 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"GGLCore\"",
-					"-l\"GGLSignIn\"",
-					"-l\"GIDExShared\"",
-					"-l\"GSDK_Overload\"",
-					"-l\"GTMOAuth2_external\"",
-					"-l\"GTMOAuth2_internal\"",
-					"-l\"GTMSessionFetcher_core\"",
-					"-l\"GTMSessionFetcher_full\"",
-					"-l\"GTMStackTrace\"",
-					"-l\"GTM_AddressBook\"",
-					"-l\"GTM_DebugUtils\"",
-					"-l\"GTM_GTMURLBuilder\"",
-					"-l\"GTM_KVO\"",
-					"-l\"GTM_NSDictionary+URLArguments\"",
-					"-l\"GTM_NSScannerJSON\"",
-					"-l\"GTM_NSStringHTML\"",
-					"-l\"GTM_NSStringXML\"",
-					"-l\"GTM_Regex\"",
-					"-l\"GTM_RoundedRectPath\"",
-					"-l\"GTM_StringEncoding\"",
-					"-l\"GTM_SystemVersion\"",
-					"-l\"GTM_UIFont+LineHeight\"",
-					"-l\"GTM_core\"",
-					"-l\"GTM_iPhone\"",
-					"-l\"OpenInChrome\"",
 					"-l\"Parse\"",
 					"-l\"ParseLib\"",
-					"-l\"SignIn\"",
 					"-l\"c++\"",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
@@ -657,34 +627,8 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"GGLCore\"",
-					"-l\"GGLSignIn\"",
-					"-l\"GIDExShared\"",
-					"-l\"GSDK_Overload\"",
-					"-l\"GTMOAuth2_external\"",
-					"-l\"GTMOAuth2_internal\"",
-					"-l\"GTMSessionFetcher_core\"",
-					"-l\"GTMSessionFetcher_full\"",
-					"-l\"GTMStackTrace\"",
-					"-l\"GTM_AddressBook\"",
-					"-l\"GTM_DebugUtils\"",
-					"-l\"GTM_GTMURLBuilder\"",
-					"-l\"GTM_KVO\"",
-					"-l\"GTM_NSDictionary+URLArguments\"",
-					"-l\"GTM_NSScannerJSON\"",
-					"-l\"GTM_NSStringHTML\"",
-					"-l\"GTM_NSStringXML\"",
-					"-l\"GTM_Regex\"",
-					"-l\"GTM_RoundedRectPath\"",
-					"-l\"GTM_StringEncoding\"",
-					"-l\"GTM_SystemVersion\"",
-					"-l\"GTM_UIFont+LineHeight\"",
-					"-l\"GTM_core\"",
-					"-l\"GTM_iPhone\"",
-					"-l\"OpenInChrome\"",
 					"-l\"Parse\"",
 					"-l\"ParseLib\"",
-					"-l\"SignIn\"",
 					"-l\"c++\"",
 					"-l\"sqlite3\"",
 					"-l\"z\"",

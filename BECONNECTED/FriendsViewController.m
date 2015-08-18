@@ -24,9 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    NSString *strUserid = [[NSUserDefaults standardUserDefaults]objectForKey:@"LoginUserID"];
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-    
+    [query whereKey:@"objectId" notEqualTo:strUserid];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             aArray = [[NSArray alloc]initWithArray:objects];
@@ -37,19 +37,6 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-    
-    
-//    PFQuery *query1 = [PFQuery queryWithClassName:@"Friends"];
-//    [query1 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error)
-//        {
-//            arrobjFriends = [[NSArray alloc]initWithArray:objects];
-//        }
-//        else {
-//            // Log details of the failure
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
     
     
     // Do any additional setup after loading the view.

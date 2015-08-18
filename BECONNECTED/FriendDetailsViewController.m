@@ -21,7 +21,11 @@
     self.scrViewFriendDetails.contentSize = CGSizeMake(self.scrViewFriendDetails.frame.size.width, 568);
     
     NSString *strFriendDetail = [[NSUserDefaults standardUserDefaults]objectForKey:@"FriendUserID"];
+    
+    
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    
+    
     [query getObjectInBackgroundWithId:strFriendDetail block:^(PFObject *objDetail, NSError *error)
      {
          // Do something with the returned PFObject in the gameScore variable.

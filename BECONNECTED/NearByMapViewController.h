@@ -10,9 +10,9 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <Parse.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface NearByMapViewController : UIViewController
+@interface NearByMapViewController : UIViewController<CLLocationManagerDelegate,GMSMapViewDelegate>
 
-@property(nonatomic,weak)IBOutlet MKMapView *mapview;
-
+@property (strong, nonatomic) IBOutlet GMSMapView *mapView;
 @end

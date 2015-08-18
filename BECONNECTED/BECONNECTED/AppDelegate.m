@@ -23,14 +23,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [NSThread sleepForTimeInterval:2];
     // Override point for customization after application launch.
+    
+    //GoogleMaps
+    [GMSServices provideAPIKey:@"AIzaSyAkeYgI0hpRKY6ykfZE0lmlgJMx_ISfCBs"];
+    
     //Twitter
     [Fabric with:@[TwitterKit]];
-    NSError* configureError;
-    [[GGLContext sharedInstance] configureWithError: &configureError];
-    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
-    //[GIDSignIn sharedInstance].delegate = self;
-    [Parse setApplicationId:@"rNxKqeFz6fCWFOD90Rmfa6iWAuhV678cwT2sT81x" clientKey:@"aJpm6VWLLGTxBbtzJv43nMq74zDUuxnwF8jKDVi3"];
+       [Parse setApplicationId:@"rNxKqeFz6fCWFOD90Rmfa6iWAuhV678cwT2sT81x" clientKey:@"aJpm6VWLLGTxBbtzJv43nMq74zDUuxnwF8jKDVi3"];
     
     PFACL *aACL = [PFACL ACL];
     [aACL setPublicReadAccess:YES];
