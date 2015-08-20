@@ -29,13 +29,13 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
     [query whereKey:@"objectId" notEqualTo:strUserid];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error)
         {
             aArray = [[NSArray alloc]initWithArray:objects];
             [_tblViewFriends reloadData];
             [self ReloadTable];
-
             
         } else
         {
@@ -45,7 +45,7 @@
     }];
     
     
-    [self ReloadTable];
+//    [self ReloadTable];
     // Do any additional setup after loading the view.
 }
 
@@ -151,22 +151,20 @@
 }
 
 
--(void)addnewentry
+-(void)addnewentry:(NSInteger)tag
 {
-    
-    
-    
-        PFObject *objpf = [PFObject objectWithClassName:@"Friends"];
-        [objpf setObject:strUserid forKey:@"userid"];
-        [objpf setObject:objPF.objectId forKey:@"friendid"];
+        objPF = [aArray objectAtIndex:tag-1];
+        PFObject *objpf1 = [PFObject objectWithClassName:@"Friends"];
+        [objpf1 setObject:strUserid forKey:@"userid"];
+        [objpf1 setObject:objPF.objectId forKey:@"friendid"];
         
         
-        [objpf setObject:[NSNumber numberWithBool:NO] forKey:@"isfriend"];
+        [objpf1 setObject:[NSNumber numberWithBool:NO] forKey:@"isfriend"];
         
         
-        [objpf setObject:@"requestsent" forKey:@"reqstatus"];
+        [objpf1 setObject:@"requestsent" forKey:@"reqstatus"];
         
-        [objpf saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [objpf1 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded)
             {
                 [self ReloadTable];
@@ -212,12 +210,15 @@
 
 -(void)TableBtnClicked:(UIButton*)sender
 {
+    NSLog(@"%ld",sender.tag);
+    
+    
     objPF = [aArray objectAtIndex:sender.tag-1];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Friends"];
     [query whereKey:@"userid" equalTo:strUserid];
     [query whereKey:@"friendid" equalTo:objPF.objectId];
-    
+    NSLog(@"%@",objPF.objectId);
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
@@ -228,7 +229,7 @@
              
              if (objQueryResult == nil )
              {
-                 [self addnewentry];
+                 [self addnewentry:sender.tag];
              }
              else
              {
@@ -253,7 +254,6 @@
 -(void)updatequery
 {
     PFQuery *query1 = [PFQuery queryWithClassName:@"Friends"];
-    [query1 whereKey:@"user" equalTo:[PFUser currentUser]];
     [query1 whereKey:@"objectId" equalTo:objQueryResult.objectId];
     
     [query1 getFirstObjectInBackgroundWithBlock:^(PFObject *userStats, NSError *error) {
@@ -271,7 +271,7 @@
             }
             // Save
             [userStats saveInBackground];
-            
+            [self ReloadTable];
         } else {
             // Did not find any UserStats for the current user
             NSLog(@"Error: %@", error);

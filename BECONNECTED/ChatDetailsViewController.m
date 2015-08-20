@@ -20,7 +20,6 @@
     NSString *strMapName= [[NSUserDefaults standardUserDefaults]objectForKey:@"MapName"];
     
     
-   // [_txtMessagebox setInputAccessoryView:_txtfieldView];
     
     if (!(strMapName == nil))
     {
@@ -67,23 +66,6 @@
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"FriendUserID"];
     }
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)btnBackClicked:(id)sender {
-    
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
-    
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    [_txtMessagebox becomeFirstResponder];
     
     accessoryView=[[UIView alloc]init];
     accessoryView.frame=CGRectMake(0,0, 320,30);
@@ -111,17 +93,59 @@
     [accessoryView addSubview:txtTypeMessage];
     
     _txtMessagebox.inputAccessoryView = accessoryView;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)btnBackClicked:(id)sender
+{
+    [_txtMessagebox resignFirstResponder];
+    [txtTypeMessage resignFirstResponder];
     
-    //[textField becomeFirstResponder];
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+    
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField==txtTypeMessage) {
+        
+        [txtTypeMessage becomeFirstResponder];
+        [_txtMessagebox resignFirstResponder];
+    }
+    if (textField==_txtMessagebox) {
+        
+        [_txtMessagebox becomeFirstResponder];
+        [txtTypeMessage resignFirstResponder];
+    }
+    
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField==txtTypeMessage) {
+        
+        _txtMessagebox.text = [textField.text stringByAppendingString:string];
+        //txtTypeMessage.text=_txtMessagebox.text;
+    }
+    if (textField==_txtMessagebox)
+    {
+        
+        txtTypeMessage.text = [textField.text stringByAppendingString:string];
+        //_txtMessagebox.text=txtTypeMessage.text;
+    }
+   
+    return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     
-    [txtTypeMessage resignFirstResponder];
     [textField resignFirstResponder];
-    _txtfieldView.hidden=FALSE;
-    
     return YES;
 }
 
