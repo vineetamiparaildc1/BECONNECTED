@@ -23,6 +23,7 @@
 		A92564251B7A0648001A57E4 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92564241B7A0648001A57E4 /* FriendsViewController.m */; };
 		A92564281B7A0674001A57E4 /* NearByMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92564271B7A0674001A57E4 /* NearByMapViewController.m */; };
 		A925642B1B7A06FA001A57E4 /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A925642A1B7A06FA001A57E4 /* ChatRoomViewController.m */; };
+		A93D64A31B85F1F10075AAFA /* Accept.png in Resources */ = {isa = PBXBuildFile; fileRef = A93D64A21B85F1F10075AAFA /* Accept.png */; };
 		A94D72F61B7B444300441425 /* back.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A94D72F51B7B444300441425 /* back.jpeg */; };
 		A960849C1B6A4ECE00ADD133 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A960849B1B6A4ECE00ADD133 /* main.m */; };
 		A960849F1B6A4ECE00ADD133 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A960849E1B6A4ECE00ADD133 /* AppDelegate.m */; };
@@ -81,6 +82,7 @@
 		A92564271B7A0674001A57E4 /* NearByMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NearByMapViewController.m; path = ../NearByMapViewController.m; sourceTree = "<group>"; };
 		A92564291B7A06FA001A57E4 /* ChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatRoomViewController.h; path = ../ChatRoomViewController.h; sourceTree = "<group>"; };
 		A925642A1B7A06FA001A57E4 /* ChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatRoomViewController.m; path = ../ChatRoomViewController.m; sourceTree = "<group>"; };
+		A93D64A21B85F1F10075AAFA /* Accept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Accept.png; sourceTree = "<group>"; };
 		A94D72F51B7B444300441425 /* back.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpeg; sourceTree = "<group>"; };
 		A96084961B6A4ECE00ADD133 /* BECONNECTED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BECONNECTED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A960849A1B6A4ECE00ADD133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				A94D72F51B7B444300441425 /* back.jpeg */,
 				1421807D1B830BBE001BEC39 /* insert.png */,
 				A91F80A51B7DFEF0000C16C1 /* AddFriend.png */,
+				A93D64A21B85F1F10075AAFA /* Accept.png */,
 				A91F80A01B7DFE93000C16C1 /* RequestSent.png */,
 				A91F80A11B7DFE93000C16C1 /* Friends.png */,
 				A96A0B871B6F83EB00794031 /* belogo.jpg */,
@@ -336,6 +339,7 @@
 				A91F80A61B7DFEF0000C16C1 /* AddFriend.png in Resources */,
 				1421807E1B830BBE001BEC39 /* insert.png in Resources */,
 				142180831B830D21001BEC39 /* camera.jpeg in Resources */,
+				A93D64A31B85F1F10075AAFA /* Accept.png in Resources */,
 				A91F809B1B7DF579000C16C1 /* chat.png in Resources */,
 				A98132551B74AD500053042C /* women-profile.png in Resources */,
 				A9E821CF1B6B8C9D004D5CD6 /* GoogleService-Info.plist in Resources */,

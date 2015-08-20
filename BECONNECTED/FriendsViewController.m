@@ -116,6 +116,7 @@
                 
                 NSString *Temp=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqstatus"];
                 bool Temp1=[[arrobjFriends objectAtIndex:i] objectForKey:@"isfriend"];
+                NSString *Temp2=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqtype"];
                 
                 if (!Temp1)
                 {
@@ -124,10 +125,22 @@
                 }
                 else
                 {
+                    
                     if([Temp isEqualToString:@"requestsent"])
                     {
-                        _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
-                        [_btnAddFriend setImage:[UIImage imageNamed:@"RequestSent.png"] forState:UIControlStateNormal];
+                        NSArray *Temp=[Temp2 componentsSeparatedByString:@","];
+                        
+                        if ([[Temp firstObject] isEqualToString:strUserid])
+                        {
+                            _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
+                            [_btnAddFriend setImage:[UIImage imageNamed:@"RequestSent.png"] forState:UIControlStateNormal];
+                        }
+                        else
+                        {
+                            _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
+                            [_btnAddFriend setImage:[UIImage imageNamed:@"Accept.png"] forState:UIControlStateNormal];
+                        }
+                        
                         
                     }
                     else if([Temp isEqualToString:@"addfriend"])
@@ -137,6 +150,8 @@
                         
                     }
                 }
+                
+                
                 
             }
     }
@@ -157,11 +172,8 @@
         PFObject *objpf1 = [PFObject objectWithClassName:@"Friends"];
         [objpf1 setObject:strUserid forKey:@"userid"];
         [objpf1 setObject:objPF.objectId forKey:@"friendid"];
-        
-        
         [objpf1 setObject:[NSNumber numberWithBool:NO] forKey:@"isfriend"];
-        
-        
+        [objpf1 setObject:[NSString stringWithFormat:@"%@,%@",strUserid,objPF.objectId] forKey:@"reqtype"];
         [objpf1 setObject:@"requestsent" forKey:@"reqstatus"];
         
         [objpf1 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
