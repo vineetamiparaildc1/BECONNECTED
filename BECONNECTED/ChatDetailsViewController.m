@@ -11,6 +11,7 @@
 @implementation ChatDetailsViewController
 {
     UITextField *txtTypeMessage;
+    UIView *accessoryView;
 }
 
 - (void)viewDidLoad {
@@ -82,12 +83,9 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    //if (textField.tag == 5)
-    //{
-   //     _txtfieldView.hidden=FALSE;
-    //}
+    [_txtMessagebox becomeFirstResponder];
     
-    UIView *accessoryView=[[UIView alloc]init];
+    accessoryView=[[UIView alloc]init];
     accessoryView.frame=CGRectMake(0,0, 320,30);
     
     UIButton *btnMedia = [[UIButton alloc]init];
@@ -114,7 +112,7 @@
     
     _txtMessagebox.inputAccessoryView = accessoryView;
     
-    [textField becomeFirstResponder];
+    //[textField becomeFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -122,6 +120,8 @@
     
     [txtTypeMessage resignFirstResponder];
     [textField resignFirstResponder];
+    _txtfieldView.hidden=FALSE;
+    
     return YES;
 }
 
