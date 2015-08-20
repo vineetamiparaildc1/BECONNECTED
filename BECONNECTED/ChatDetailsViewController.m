@@ -9,6 +9,9 @@
 #import "ChatDetailsViewController.h"
 
 @implementation ChatDetailsViewController
+{
+    UITextField *txtTypeMessage;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -18,7 +21,7 @@
     
    // [_txtMessagebox setInputAccessoryView:_txtfieldView];
     
-    if (![strMapName isEqualToString:@""])
+    if (!(strMapName == nil))
     {
         
         PFQuery *query = [PFQuery queryWithClassName:@"_User"];
@@ -36,12 +39,13 @@
                  }
              }];
          }];
-        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"MapName"];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"MapName"];
         
         
     }
     
-    if (![strFriendDetail isEqualToString:@""])
+    if (!(strFriendDetail == nil))
+
     {
         PFQuery *query = [PFQuery queryWithClassName:@"_User"];
         [query getObjectInBackgroundWithId:strFriendDetail block:^(PFObject *objDetail, NSError *error)
@@ -59,11 +63,8 @@
                  }
              }];
          }];
-        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"FriendUserID"];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"FriendUserID"];
     }
-    
-    
-    
     
 }
 
@@ -81,11 +82,45 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [_txtMessagebox setInputAccessoryView:_txtfieldView];
+    //if (textField.tag == 5)
+    //{
+   //     _txtfieldView.hidden=FALSE;
+    //}
+    
+    UIView *accessoryView=[[UIView alloc]init];
+    accessoryView.frame=CGRectMake(0,0, 320,30);
+    
+    UIButton *btnMedia = [[UIButton alloc]init];
+    btnMedia.frame=CGRectMake(5,3, 25,25);
+    [btnMedia setBackgroundImage:[UIImage imageNamed:@"insert.png"] forState:UIControlStateNormal];
+    [accessoryView addSubview:btnMedia];
+    
+    UIButton *btnCamera = [[UIButton alloc]init];
+    btnCamera.frame=CGRectMake(250,3, 25,25);
+    [btnCamera setBackgroundImage:[UIImage imageNamed:@"camera.jpeg"] forState:UIControlStateNormal];
+    [accessoryView addSubview:btnCamera];
+    
+    UIButton *btnMic = [[UIButton alloc]init];
+    btnMic.frame=CGRectMake(286,3, 25,25);
+    [btnMic setBackgroundImage:[UIImage imageNamed:@"mic.png"] forState:UIControlStateNormal];
+    [accessoryView addSubview:btnMic];
+    
+    txtTypeMessage = [[UITextField alloc]init];
+    txtTypeMessage.frame=CGRectMake(43, -2, 197, 30);
+    txtTypeMessage.delegate=self;
+    txtTypeMessage.tag=5;
+    txtTypeMessage.borderStyle=UITextBorderStyleRoundedRect;
+    [accessoryView addSubview:txtTypeMessage];
+    
+    _txtMessagebox.inputAccessoryView = accessoryView;
+    
+    [textField becomeFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    
+    [txtTypeMessage resignFirstResponder];
     [textField resignFirstResponder];
     return YES;
 }

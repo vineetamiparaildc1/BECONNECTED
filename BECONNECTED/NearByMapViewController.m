@@ -38,7 +38,6 @@
     }
     [locationManager startUpdatingLocation];
     _mapView.myLocationEnabled = YES;
-    
     _mapView.delegate =self;
     
     
@@ -120,7 +119,6 @@
     NSString *baseUrl = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/directions/json?origin=%f,%f&destination=%f,%f&sensor=true", fromLocation.latitude,  fromLocation.longitude, toLocation.latitude,  toLocation.longitude];
     
     NSURL *url = [NSURL URLWithString:[baseUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    NSLog(@"Url: %@", url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     
@@ -135,9 +133,6 @@
         polyLine.strokeWidth = 3.0;
         polyLine.strokeColor =  [UIColor redColor];
         polyLine.map= _mapView;
-        
-        
-        NSLog(@"%@",aDict);
         
     }];
     

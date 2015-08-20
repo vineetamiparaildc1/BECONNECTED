@@ -27,20 +27,6 @@
     [super viewDidLoad];
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginUserID"];
-    
-    if(savedValue.length>5)
-    {
-        //NotificationsViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"NotificationsViewController"];
-        //[self presentViewController:obj animated:YES completion:nil];
-            [self performSegueWithIdentifier:@"pushview" sender:nil];
-
-    }
-   
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

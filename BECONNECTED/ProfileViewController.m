@@ -427,10 +427,9 @@
         {
             NSString *Temp = _txt_selectCountry.text;
             NSArray *temparr = [Temp componentsSeparatedByString:@"+"];
-            NSLog(@"%@",temparr);
-    
+            
             Temp = [NSString stringWithFormat:@"+%@",[temparr objectAtIndex:1]];
-            NSLog(@"%@",Temp);
+            
             [user setObject:[temparr objectAtIndex:0] forKey:@"countryname"];
             [user setObject:Temp forKey:@"countrycode"];
             [user setObject:_txtMobileNum.text forKey:@"mobileno"];
@@ -458,53 +457,8 @@
          {
              if (success)
              {
-                 NSLog(@"User Saved");
-                 
-                     {
-                     //Getting FBImageUrl From Dictionary Results
-                     //                             NSMutableDictionary *DicFbImageUrl = result;
-                     //                             DicFbImageUrl = [DicFbImageUrl objectForKey:@"picture"];
-                     //                             DicFbImageUrl = [DicFbImageUrl objectForKey:@"data"];
-                     //                             NSString *StrFbImageUrl = [DicFbImageUrl objectForKey:@"url"];
-                     //
-                     //
-                     //
-                     //                             NSURL *imageURL = [NSURL URLWithString:StrFbImageUrl];
-                     //                             NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-                     //                             UIImage *image = [UIImage imageWithData:imageData];
-                     //
-                     //                             [_btnProfilePic setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:StrFbImageUrl]]] forState:(UIControlState)nil];
-                     //
-                     //
-                     //                             //For getting image name for PFFileName
-                     //                             NSArray *temparr = [StrFbImageUrl componentsSeparatedByString:@"/"];
-                     //                             StrFbImageUrl = [temparr lastObject];
-                     //                             temparr = [StrFbImageUrl componentsSeparatedByString:@"?"];
-                     
-                     
-                     /*
-                     UIImage *image = _btnProfilePic.imageView.image;
-                     NSData *imageData = UIImageJPEGRepresentation(image,1.0);
-                     PFFile *imageFile = [PFFile fileWithName:@"ProfilePic" data:imageData];
-                     [user setObject:imageFile forKey:@"profilepic"];
-                     
-                     
-                     [imageFile saveInBackground];
-                     
-                     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-                      {
-                          if (!error)
-                          {
-                      
-                              
-                          }
-                      }];
-                     */
-                     
-                     }
-                     
-                     ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-                     [self presentViewController:obj animated:YES completion:nil];
+                ViewController *obj  =[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+                [self presentViewController:obj animated:YES completion:nil];
                  
              }
              else
@@ -662,9 +616,6 @@
     [_btnProfilePic setImage:origionalImage forState:(UIControlState)nil];
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
-    NSURL *imageURL = [info objectForKey:UIImagePickerControllerReferenceURL];
-    NSLog(@"URL = %@",imageURL);
-    
     PFUser *user = [PFUser currentUser];
     NSData *imageData = UIImageJPEGRepresentation(origionalImage,1.0);
     PFFile *imageFile = [PFFile fileWithName:@"ProfilePic.jpg" data:imageData];
@@ -691,7 +642,7 @@
     [[[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:@{@"fields":@"id,name,picture.type(large),email,birthday, bio,location"}]startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
         if (!error)
         {
-            NSLog(@"Result = %@",result);
+    
             NSMutableDictionary *DicFbImageUrl = result;
 
             _txt_UserName.text= [DicFbImageUrl objectForKey:@"name"];

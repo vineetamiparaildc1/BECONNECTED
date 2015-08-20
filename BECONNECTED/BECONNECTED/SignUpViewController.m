@@ -423,9 +423,7 @@
         NSInteger row = [singlePicker selectedRowInComponent:0];
         NSString *Temp = [pickerArray objectAtIndex:row];
         NSArray *temparr = [Temp componentsSeparatedByString:@"+"];
-        NSLog(@"%@",temparr);
         Temp = [NSString stringWithFormat:@"+%@",[temparr objectAtIndex:1]];
-        NSLog(@"%@",Temp);
         _txtCountryCode.text=Temp;
         [_btnSelectCountry.titleLabel setTextAlignment:NSTextAlignmentCenter];
         [_btnSelectCountry setTitle:[NSString stringWithFormat:@"%@",[temparr objectAtIndex:0]] forState:UIControlStateNormal];

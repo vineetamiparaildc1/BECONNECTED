@@ -14,7 +14,8 @@
     NSArray *aArray;
     PFObject *objPF;
     NSArray *arrobjFriends;
-    
+    PFObject *objQueryResult;
+    NSString *strUserid;
 }
 
 @end
@@ -24,21 +25,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *strUserid = [[NSUserDefaults standardUserDefaults]objectForKey:@"LoginUserID"];
+    strUserid = [[NSUserDefaults standardUserDefaults]objectForKey:@"LoginUserID"];
+    
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
     [query whereKey:@"objectId" notEqualTo:strUserid];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
+        if (!error)
+        {
             aArray = [[NSArray alloc]initWithArray:objects];
             [_tblViewFriends reloadData];
+            [self ReloadTable];
+
             
-        } else {
+        } else
+        {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
     
     
+    [self ReloadTable];
     // Do any additional setup after loading the view.
 }
 
@@ -62,61 +69,9 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellOne"];
     
-    
-    
-    _btnAddFriend = [UIButton buttonWithType:UIButtonTypeCustom];
-    for (int i=0; i<aArray.count; i++)
-    {
-        int y=5;
-        _btnAddFriend.frame = CGRectMake(220, y, 110, 35);
-        y=y+50;
-    }
-    
-    //[cell.contentView addSubview:_btnAddFriend];
-    _btnAddFriend.tag = indexPath.row + 1;
-    
-    for (int i=0; i<arrobjFriends.count; i++)
-    {
-        
-        NSString *Temp=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqstatus"];
-        //NSString *Temp1=[[arrobjFriends objectAtIndex:i] objectForKey:@"isfriend"];
-        
-        if ([Temp isEqualToString:@"requestsent"])
-        {
-            [_btnAddFriend setImage:[UIImage imageNamed:@"RequestSent.png"] forState:UIControlStateNormal];
-            [cell.contentView addSubview:_btnAddFriend];
-            [[NSUserDefaults standardUserDefaults] setObject:@"addfriend" forKey:@"RequestDetail"];
-            
-        }
-         if([Temp isEqualToString:@"addfriend"])
-        {
-            [_btnAddFriend setImage:[UIImage imageNamed:@"AddFriend.png"] forState:UIControlStateNormal];
-             [cell.contentView addSubview:_btnAddFriend];
-            [[NSUserDefaults standardUserDefaults] setObject:@"requestsent" forKey:@"RequestDetail"];
-         
-        }
-//         if ([Temp1 isEqualToString:@"true"])
-//        {
-//            [_btnAddFriend setImage:[UIImage imageNamed:@"Friends.png"] forState:UIControlStateNormal];
-//            [cell.contentView addSubview:_btnAddFriend];
-//        }
-        
-    }
-        
-            
-        
-        
-    [_btnAddFriend addTarget:self action:@selector(TableBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-            
-        
-    
-    
-
     objPF = [aArray objectAtIndex:indexPath.row];
     
     PFFile *imageFile = [objPF objectForKey:@"profilepic"];
-    NSLog(@"imageURL= %@",imageFile.url);
-    
     [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
         
         if (!error && imageData) {
@@ -129,7 +84,7 @@
             
         }
     }];
-
+    
     
     UILabel *lblTitle = (UILabel*)[cell viewWithTag:201];
     lblTitle.text =  [objPF objectForKey:@"fullname"];
@@ -137,56 +92,93 @@
     UILabel *lblTitle1 = (UILabel*)[cell viewWithTag:202];
     lblTitle1.text =  [objPF objectForKey:@"status"];
     
+    
+    
+    _btnAddFriend = [UIButton buttonWithType:UIButtonTypeCustom];
+    for (int i=0; i<aArray.count; i++)
+    {
+        int y=5;
+        _btnAddFriend.frame = CGRectMake(220, y, 100, 35);
+        y=y+50;
+    }
+    
+    _btnAddFriend.tag = indexPath.row + 1;
+    
+    
+    if (arrobjFriends.count == 0)
+    {
+        [_btnAddFriend setImage:[UIImage imageNamed:@"AddFriend.png"] forState:UIControlStateNormal];
+    }
+    else
+    {
+            for (int i=0; i<arrobjFriends.count; i++)
+            {
+                
+                NSString *Temp=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqstatus"];
+                bool Temp1=[[arrobjFriends objectAtIndex:i] objectForKey:@"isfriend"];
+                
+                if (!Temp1)
+                {
+                    _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
+                    [_btnAddFriend setImage:[UIImage imageNamed:@"Friends.png"] forState:UIControlStateNormal];
+                }
+                else
+                {
+                    if([Temp isEqualToString:@"requestsent"])
+                    {
+                        _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
+                        [_btnAddFriend setImage:[UIImage imageNamed:@"RequestSent.png"] forState:UIControlStateNormal];
+                        
+                    }
+                    else if([Temp isEqualToString:@"addfriend"])
+                    {
+                        _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
+                        [_btnAddFriend setImage:[UIImage imageNamed:@"AddFriend.png"] forState:UIControlStateNormal];
+                        
+                    }
+                }
+                
+            }
+    }
+    
+    [cell.contentView addSubview:_btnAddFriend];
+    
+    [_btnAddFriend addTarget:self action:@selector(TableBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
     return cell;
     
     
 }
 
--(void)TableBtnClicked:(UIButton*)sender
-{
-    objPF = [aArray objectAtIndex:sender.tag-1];
-    NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginUserID"];
-    NSString *savedValue2 = [[NSUserDefaults standardUserDefaults] stringForKey:@"RequestDetail"];
-    PFObject *gameScore = [PFObject objectWithClassName:@"Friends"];
-    [gameScore setObject:savedValue forKey:@"userid"];
-    [gameScore setObject:objPF.objectId forKey:@"friendid"];
-    
-    
-    [gameScore setObject:[NSNumber numberWithBool:NO] forKey:@"isfriend"];
-    
-    
-    [gameScore setObject:savedValue2 forKey:@"reqstatus"];
-    
-    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded)
-        {
-            [_tblViewFriends reloadData];
-        }
-        else
-        {
-            // There was a problem, check error.description
-        }
-    }];
-    
-    
-    
-}
-- (IBAction)btnclicked:(id)sender
-{
-    PFQuery *query1 = [PFQuery queryWithClassName:@"Friends"];
-    [query1 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error)
-        {
-            arrobjFriends = [[NSArray alloc]initWithArray:objects];
-            [_tblViewFriends reloadData];
-        }
-        else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
 
+-(void)addnewentry
+{
+    
+    
+    
+        PFObject *objpf = [PFObject objectWithClassName:@"Friends"];
+        [objpf setObject:strUserid forKey:@"userid"];
+        [objpf setObject:objPF.objectId forKey:@"friendid"];
+        
+        
+        [objpf setObject:[NSNumber numberWithBool:NO] forKey:@"isfriend"];
+        
+        
+        [objpf setObject:@"requestsent" forKey:@"reqstatus"];
+        
+        [objpf saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded)
+            {
+                [self ReloadTable];
+            }
+            else
+            {
+                // There was a problem, check error.description
+            }
+        }];
+    
 }
+
 
 //Table view delegates
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -196,6 +188,96 @@
     FriendDetailsViewController *obj = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendDetailsViewController"];
     [self presentViewController:obj animated:YES completion:nil];
     
+}
+
+
+
+-(void)ReloadTable
+{
+    PFQuery *query1 = [PFQuery queryWithClassName:@"Friends"];
+    [query1 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if (!error) {
+             arrobjFriends = [[NSArray alloc]initWithArray:objects];
+             [_tblViewFriends reloadData];
+             
+         } else {
+             // Log details of the failure
+             NSLog(@"Error: %@ %@", error, [error userInfo]);
+         }
+     }];
+    [_tblViewFriends reloadData];
+ 
+}
+
+-(void)TableBtnClicked:(UIButton*)sender
+{
+    objPF = [aArray objectAtIndex:sender.tag-1];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Friends"];
+    [query whereKey:@"userid" equalTo:strUserid];
+    [query whereKey:@"friendid" equalTo:objPF.objectId];
+    
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         
+         if (!error) {
+             
+             objQueryResult=[objects firstObject];
+             
+             if (objQueryResult == nil )
+             {
+                 [self addnewentry];
+             }
+             else
+             {
+                 [self updatequery];
+             }
+             
+             
+         } else {
+             // Log details of the failure
+             NSLog(@"Error: %@ %@", error, [error userInfo]);
+         }
+         
+         
+     }];
+   
+    [self ReloadTable];
+
+}
+
+
+
+-(void)updatequery
+{
+    PFQuery *query1 = [PFQuery queryWithClassName:@"Friends"];
+    [query1 whereKey:@"user" equalTo:[PFUser currentUser]];
+    [query1 whereKey:@"objectId" equalTo:objQueryResult.objectId];
+    
+    [query1 getFirstObjectInBackgroundWithBlock:^(PFObject *userStats, NSError *error) {
+        if (!error)
+        {
+            // Found UserStats
+            NSString *temp=[userStats objectForKey:@"reqstatus"];
+            if ([temp isEqualToString:@"requestsent"])
+            {
+                [userStats setObject:@"addfriend" forKey:@"reqstatus"];
+            }
+            if ([temp isEqualToString:@"addfriend"])
+            {
+                [userStats setObject:@"requestsent" forKey:@"reqstatus"];
+            }
+            // Save
+            [userStats saveInBackground];
+            
+        } else {
+            // Did not find any UserStats for the current user
+            NSLog(@"Error: %@", error);
+        }
+    }];
+    [self ReloadTable];
 }
 
 @end

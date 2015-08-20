@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse.h>
 
-@interface ChatDetailsViewController : UIViewController
+@interface ChatDetailsViewController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFriendsName;
 

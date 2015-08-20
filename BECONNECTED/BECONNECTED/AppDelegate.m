@@ -12,6 +12,9 @@
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
 #import <Parse.h>
+#import <UIKit/UIKit.h>
+#import "NotificationsViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -22,6 +25,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [NSThread sleepForTimeInterval:2];
+    [[self window] makeKeyAndVisible];
+    NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginUserID"];
+
+    if(!(savedValue==nil))
+    {
+        [self.window.rootViewController performSegueWithIdentifier:@"pushview" sender:self];
+    }
+    
     // Override point for customization after application launch.
     
     //GoogleMaps
@@ -72,8 +83,8 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation
 {
-   
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
+    
+        return [[FBSDKApplicationDelegate sharedInstance] application:application
                                                           openURL:url
                                                 sourceApplication:sourceApplication
                                                        annotation:annotation];
