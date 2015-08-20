@@ -44,8 +44,6 @@
         }
     }];
     
-    
-//    [self ReloadTable];
     // Do any additional setup after loading the view.
 }
 
@@ -116,7 +114,8 @@
                 
                 NSString *Temp=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqstatus"];
                 bool Temp1=[[arrobjFriends objectAtIndex:i] objectForKey:@"isfriend"];
-                NSString *Temp2=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqtype"];
+                //NSString *Temp2=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqtype"];
+                
                 
                 if (!Temp1)
                 {
@@ -128,20 +127,8 @@
                     
                     if([Temp isEqualToString:@"requestsent"])
                     {
-                        NSArray *Temp=[Temp2 componentsSeparatedByString:@","];
-                        
-                        if ([[Temp firstObject] isEqualToString:strUserid])
-                        {
                             _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
                             [_btnAddFriend setImage:[UIImage imageNamed:@"RequestSent.png"] forState:UIControlStateNormal];
-                        }
-                        else
-                        {
-                            _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
-                            [_btnAddFriend setImage:[UIImage imageNamed:@"Accept.png"] forState:UIControlStateNormal];
-                        }
-                        
-                        
                     }
                     else if([Temp isEqualToString:@"addfriend"])
                     {
@@ -216,8 +203,6 @@
              NSLog(@"Error: %@ %@", error, [error userInfo]);
          }
      }];
-    [_tblViewFriends reloadData];
- 
 }
 
 -(void)TableBtnClicked:(UIButton*)sender
@@ -289,7 +274,6 @@
             NSLog(@"Error: %@", error);
         }
     }];
-    [self ReloadTable];
 }
 
 @end
