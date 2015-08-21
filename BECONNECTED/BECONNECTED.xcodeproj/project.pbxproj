@@ -11,6 +11,7 @@
 		1421807E1B830BBE001BEC39 /* insert.png in Resources */ = {isa = PBXBuildFile; fileRef = 1421807D1B830BBE001BEC39 /* insert.png */; };
 		142180831B830D21001BEC39 /* camera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 142180811B830D21001BEC39 /* camera.jpeg */; };
 		142180841B830D21001BEC39 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 142180821B830D21001BEC39 /* mic.png */; };
+		14934A211B86FE13001C2B11 /* red-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 14934A201B86FE13001C2B11 /* red-arrow.png */; };
 		A904D4911B7388D7000CFB81 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A904D4901B7388D7000CFB81 /* ProfileViewController.m */; };
 		A91F809B1B7DF579000C16C1 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = A91F80991B7DF579000C16C1 /* chat.png */; };
 		A91F809C1B7DF579000C16C1 /* loation.png in Resources */ = {isa = PBXBuildFile; fileRef = A91F809A1B7DF579000C16C1 /* loation.png */; };
@@ -63,6 +64,7 @@
 		1421807D1B830BBE001BEC39 /* insert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insert.png; sourceTree = "<group>"; };
 		142180811B830D21001BEC39 /* camera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpeg; sourceTree = "<group>"; };
 		142180821B830D21001BEC39 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
+		14934A201B86FE13001C2B11 /* red-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-arrow.png"; sourceTree = "<group>"; };
 		2CF07A85877E8714C8A20EB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A904D48F1B7388D7000CFB81 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
 		A904D4901B7388D7000CFB81 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				A96A0B871B6F83EB00794031 /* belogo.jpg */,
 				A9854D161B70BC0600A5142D /* cancel-png.jpeg */,
 				A96A0B881B6F83EB00794031 /* btn_information.png */,
+				14934A201B86FE13001C2B11 /* red-arrow.png */,
 				A91F809D1B7DF57D000C16C1 /* call.png */,
 				A96084981B6A4ECE00ADD133 /* BECONNECTED */,
 				A96084B21B6A4ECE00ADD133 /* BECONNECTEDTests */,
@@ -346,6 +349,7 @@
 				A96084A51B6A4ECE00ADD133 /* Main.storyboard in Resources */,
 				A9854D171B70BC0600A5142D /* cancel-png.jpeg in Resources */,
 				142180841B830D21001BEC39 /* mic.png in Resources */,
+				14934A211B86FE13001C2B11 /* red-arrow.png in Resources */,
 				A91F809C1B7DF579000C16C1 /* loation.png in Resources */,
 				A96A0B891B6F83EB00794031 /* belogo.jpg in Resources */,
 				A96084A71B6A4ECE00ADD133 /* Images.xcassets in Resources */,

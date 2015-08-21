@@ -340,19 +340,7 @@
 
 - (IBAction)btn_backClicked:(id)sender
 {
-   /* NSString *savedValue = [[NSUserDefaults standardUserDefaults]
-                            stringForKey:@"LoginProfile"];
-    
-    
-    if([savedValue isEqualToString:@"Facebook"] || [savedValue isEqualToString:@"Facebook"])
-    {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-    if ([savedValue isEqualToString:@"NewUser"]) {
-        
-        
-    }
-    */
+   
     [[NSUserDefaults standardUserDefaults] setObject:@" " forKey:@"LoginProfile"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -401,17 +389,11 @@
     
     else{
         
-        //NSDictionary *temp= result;
+        
         PFUser *user=[PFUser user];
         user.username = _txt_UserName.text;
         user.password = _txt_Password.text;
         user.email =  _txtEmailID.text;
-        
-        
-        
-        
-        
-        
         
         NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginProfile"];
         
@@ -582,7 +564,8 @@
     [actionSheet showInView:self.view];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
     if (buttonIndex == 0 && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
         Picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -615,23 +598,7 @@
     
     [_btnProfilePic setImage:origionalImage forState:(UIControlState)nil];
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-    PFUser *user = [PFUser currentUser];
-    NSData *imageData = UIImageJPEGRepresentation(origionalImage,1.0);
-    PFFile *imageFile = [PFFile fileWithName:@"ProfilePic.jpg" data:imageData];
-    [imageFile saveInBackground];
-    
-    [user setObject:imageFile forKey:@"profilepic"];
-    
-    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
-        if (!error)
-        {
-            
-            
-        }
-    }];
-    
-    
+       
 }
 
 

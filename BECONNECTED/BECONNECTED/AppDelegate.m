@@ -24,8 +24,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [NSThread sleepForTimeInterval:2];
-    [[self window] makeKeyAndVisible];
+    
+    [self.window makeKeyAndVisible];
+    [NSThread sleepForTimeInterval:0.5];
+    
     NSString *savedValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"LoginUserID"];
 
     if(!(savedValue==nil))

@@ -101,10 +101,12 @@
 - (IBAction)btn_LoginClicked:(id)sender
 {
     [PFUser logInWithUsernameInBackground:_txtUsername.text password:_txtPassword.text
-                                    block:^(PFUser *user, NSError *error) {
+                                    block:^(PFUser *user, NSError *error)
+    {
                                         if (user)
                                         {
-                                            [[NSUserDefaults standardUserDefaults] setObject:[user objectId] forKey:@"LoginUserID"];
+                                            [[NSUserDefaults standardUserDefaults] setObject:user.objectId forKey:@"LoginUserID"];
+                                            NSLog(@"%@",user.objectId);
                                             [self performSegueWithIdentifier:@"pushview" sender:nil];
                                             
                                         }

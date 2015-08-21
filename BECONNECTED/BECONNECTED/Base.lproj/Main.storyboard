@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hbb-DV-4OJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -346,7 +346,7 @@
                                         <rect key="frame" x="0.0" y="59" width="320" height="548"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <mutableString key="text">This is a T&amp;Cs template for social networking websites. It has been designed to help protect the website operator from the many potential liabilities that can arise out of the operation of a social network. In addition, the template will help operators to comply with disclosure laws and to manage the licensing of copyright-protected content in an appropriate manner.
+                                        <string key="text">This is a T&amp;Cs template for social networking websites. It has been designed to help protect the website operator from the many potential liabilities that can arise out of the operation of a social network. In addition, the template will help operators to comply with disclosure laws and to manage the licensing of copyright-protected content in an appropriate manner.
 
 The T&amp;Cs are based upon the premium version of our generic website T&amp;Cs.
 
@@ -358,7 +358,7 @@ Social directory - For directory websites with social features.
 Social recruitment - For recruitment websites with social features.
 Social and affiliate - With added provisions for social websites earning money through affiliate marketing.
 Social network and subscription - For social networks with paid subscription options.
-Social reviews and questions - Combining the provisions of our social network , our reviews website and our Q&amp;A website terms and conditions.</mutableString>
+Social reviews and questions - Combining the provisions of our social network , our reviews website and our Q&amp;A website terms and conditions.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -669,14 +669,14 @@ Social reviews and questions - Combining the provisions of our social network , 
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="201" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xmX-SI-xkE">
-                                                    <rect key="frame" x="57" y="5" width="210" height="15"/>
+                                                    <rect key="frame" x="57" y="8" width="210" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cxq-ap-zfQ">
-                                                    <rect key="frame" x="57" y="25" width="210" height="15"/>
+                                                    <rect key="frame" x="57" y="27" width="210" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -706,17 +706,68 @@ Social reviews and questions - Combining the provisions of our social network , 
         <!--Chats-->
         <scene sceneID="Y1w-pC-U8h">
             <objects>
-                <viewController title="Chats" id="nPg-Sj-b0s" sceneMemberID="viewController">
+                <viewController title="Chats" id="nPg-Sj-b0s" customClass="ChatRoomViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fZu-Wd-iiU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="rtW-AR-j89">
+                                <rect key="frame" x="-5" y="61" width="325" height="459"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellOne" rowHeight="50" id="Sqk-3f-Q8P">
+                                        <rect key="frame" x="0.0" y="22" width="325" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sqk-3f-Q8P" id="204-ma-FIz">
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="mHd-xo-UEs">
+                                                    <rect key="frame" x="10" y="5" width="36" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="201" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tcc-8k-teE">
+                                                    <rect key="frame" x="57" y="8" width="210" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mFt-XC-NDe">
+                                                    <rect key="frame" x="57" y="27" width="210" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nPg-Sj-b0s" id="fBS-Zi-FJ4"/>
+                                    <outlet property="delegate" destination="nPg-Sj-b0s" id="f6j-2J-Pc4"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rC1-F6-nsK">
+                                <rect key="frame" x="41" y="23" width="239" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chats" id="LG6-3l-PQM"/>
+                    <connections>
+                        <outlet property="tblFriends" destination="rtW-AR-j89" id="PCZ-5W-h6y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q57-zE-bAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1105" y="1294"/>
+            <point key="canvasLocation" x="-701" y="504"/>
         </scene>
         <!--Near Me-->
         <scene sceneID="I75-7E-jNz">
@@ -1052,7 +1103,7 @@ Social reviews and questions - Combining the provisions of our social network , 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36T-cp-lpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-472" y="1136"/>
+            <point key="canvasLocation" x="-1186" y="1136"/>
         </scene>
         <!--Friend Details View Controller-->
         <scene sceneID="ggl-NY-Vz6">

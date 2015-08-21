@@ -16,6 +16,8 @@
     NSArray *arrobjFriends;
     PFObject *objQueryResult;
     NSString *strUserid;
+    UIImageView *imgView;
+    BOOL isfriends;
 }
 
 @end
@@ -68,6 +70,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellOne"];
     
     objPF = [aArray objectAtIndex:indexPath.row];
+    NSString *strfriendid=objPF.objectId;
     
     PFFile *imageFile = [objPF objectForKey:@"profilepic"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
@@ -75,7 +78,7 @@
         if (!error && imageData) {
             UIImage *image = [[UIImage alloc]initWithData:imageData];
             
-            UIImageView *imgView = (UIImageView*)[cell viewWithTag:200];
+            imgView = (UIImageView*)[cell viewWithTag:200];
             imgView.image = image;
             imgView.layer.cornerRadius = imgView.frame.size.width / 2;
             imgView.clipsToBounds = YES;
@@ -112,12 +115,13 @@
             for (int i=0; i<arrobjFriends.count; i++)
             {
                 
-                NSString *Temp=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqstatus"];
-                bool Temp1=[[arrobjFriends objectAtIndex:i] objectForKey:@"isfriend"];
-                //NSString *Temp2=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqtype"];
+                NSString *strreqstatus=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqstatus"];
+                //BOOL isfriend=[[arrobjFriends objectAtIndex:i] objectForKey:@"isfriend"];
+                NSString *strreqtype=[[arrobjFriends objectAtIndex:i] objectForKey:@"reqtype"];
+                NSArray *objArrreqtype = [strreqtype componentsSeparatedByString:@","];
                 
                 
-                if (!Temp1)
+                if (![[arrobjFriends objectAtIndex:i] objectForKey:@"isfriend"])
                 {
                     _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
                     [_btnAddFriend setImage:[UIImage imageNamed:@"Friends.png"] forState:UIControlStateNormal];
@@ -125,12 +129,43 @@
                 else
                 {
                     
-                    if([Temp isEqualToString:@"requestsent"])
+                    if([strreqstatus isEqualToString:@"requestsent"])
                     {
+                        
+                        NSLog(@"%@ %@ %@",strreqtype,strUserid,[[arrobjFriends objectAtIndex:i] objectForKey:@"friendid"]);
+                        NSLog(@"%@",strfriendid);
+                        
+                        if ([[objArrreqtype lastObject]isEqualToString:[[arrobjFriends objectAtIndex:i] objectForKey:@"friendid"]])
+                        {
+                            
+                        }
+                        if ([[objArrreqtype lastObject] isEqualToString:strUserid]) {
+                            
+                        }
+                        if ([strfriendid isEqualToString:[arrobjFriends lastObject]])
+                        {
+                            
+                        }
+                        
+                        if ([[objArrreqtype firstObject]isEqualToString:strUserid] && [[objArrreqtype lastObject] isEqualToString:[[arrobjFriends objectAtIndex:i] objectForKey:@"friendid"]])
+                        {
                             _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
                             [_btnAddFriend setImage:[UIImage imageNamed:@"RequestSent.png"] forState:UIControlStateNormal];
+                        }
+                        else if ([[objArrreqtype lastObject]isEqualToString:[[arrobjFriends objectAtIndex:i] objectForKey:@"friendid"]] && [[objArrreqtype lastObject] isEqualToString:strUserid] && [strUserid isEqualToString:[objArrreqtype lastObject]])
+                        {
+                            
+                            _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
+                            [_btnAddFriend setImage:[UIImage imageNamed:@"Accept.png"] forState:UIControlStateNormal];
+                        }
+                        else
+                        {
+                            _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
+                            [_btnAddFriend setImage:[UIImage imageNamed:@"AddFriend.png"] forState:UIControlStateNormal];
+                        }
+                        
                     }
-                    else if([Temp isEqualToString:@"addfriend"])
+                    else if([strreqstatus isEqualToString:@"addfriend"])
                     {
                         _btnAddFriend = (UIButton*)[cell viewWithTag:i+1];
                         [_btnAddFriend setImage:[UIImage imageNamed:@"AddFriend.png"] forState:UIControlStateNormal];
@@ -155,14 +190,20 @@
 
 -(void)addnewentry:(NSInteger)tag
 {
+    
         objPF = [aArray objectAtIndex:tag-1];
+    
         PFObject *objpf1 = [PFObject objectWithClassName:@"Friends"];
         [objpf1 setObject:strUserid forKey:@"userid"];
         [objpf1 setObject:objPF.objectId forKey:@"friendid"];
+        [objpf1 setObject:[objPF valueForKey:@"fullname"] forKey:@"friendname"];
+        [objpf1 setObject:[objPF valueForKey:@"status"] forKey:@"friendstatus"];
+    
         [objpf1 setObject:[NSNumber numberWithBool:NO] forKey:@"isfriend"];
         [objpf1 setObject:[NSString stringWithFormat:@"%@,%@",strUserid,objPF.objectId] forKey:@"reqtype"];
         [objpf1 setObject:@"requestsent" forKey:@"reqstatus"];
-        
+        [objpf1 setObject:[objPF objectForKey:@"profilepic"] forKey:@"friendprofilepic"];
+
         [objpf1 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded)
             {
@@ -192,8 +233,16 @@
 -(void)ReloadTable
 {
     PFQuery *query1 = [PFQuery queryWithClassName:@"Friends"];
-    [query1 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    [query1 whereKey:@"userid" equalTo:strUserid];
+    
+    
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Friends"];
+    [query2 whereKey:@"friendid" equalTo:strUserid];
+    
+    PFQuery *query3 = [PFQuery orQueryWithSubqueries:@[query1, query2]];
+    [query3 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
+         
          if (!error) {
              arrobjFriends = [[NSArray alloc]initWithArray:objects];
              [_tblViewFriends reloadData];
@@ -207,15 +256,11 @@
 
 -(void)TableBtnClicked:(UIButton*)sender
 {
-    NSLog(@"%ld",sender.tag);
-    
-    
     objPF = [aArray objectAtIndex:sender.tag-1];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Friends"];
     [query whereKey:@"userid" equalTo:strUserid];
     [query whereKey:@"friendid" equalTo:objPF.objectId];
-    NSLog(@"%@",objPF.objectId);
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
@@ -241,8 +286,6 @@
          
          
      }];
-   
-    [self ReloadTable];
 
 }
 
@@ -258,6 +301,7 @@
         {
             // Found UserStats
             NSString *temp=[userStats objectForKey:@"reqstatus"];
+            
             if ([temp isEqualToString:@"requestsent"])
             {
                 [userStats setObject:@"addfriend" forKey:@"reqstatus"];

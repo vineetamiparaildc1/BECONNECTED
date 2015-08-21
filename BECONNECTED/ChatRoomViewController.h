@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse.h>
 
 @interface ChatRoomViewController : UIViewController
+
+@property(nonatomic,weak)IBOutlet UITableView *tblFriends;
+
 
 @end
